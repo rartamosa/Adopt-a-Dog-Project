@@ -14,7 +14,7 @@ _Query parameters_:
 
 2. size: `String` (optional)
 
-   Available values: `'small'`, `'medium'`, `'large'`
+   Available values: `'1small'`, `'2medium'`, `'3large'`
 
 3. name: `String` (optional)
 
