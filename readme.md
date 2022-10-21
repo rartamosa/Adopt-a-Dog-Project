@@ -42,7 +42,7 @@ _Response success_:
     gender: String,
     size: String,
     image: String,
-    __v: Number
+    __v: Int32
   }>,
   totalCount: Number,
   success: Boolean
