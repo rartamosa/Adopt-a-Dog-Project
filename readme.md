@@ -2,23 +2,23 @@
 
 ## 1. API
 
-**Base url**: https://dogs-api-sprint-4.herokuapp.com
+**Base url**: https://dogs-api-group-project-1.herokuapp.com
 
 **GET** /dogs
 
 _Query parameters_:
 
-1. color: `String` (optional)
-
-   Available values: `'red'`, `'apricot'`, `'black'`, `'white'`, `'silver'`, `'tan'`,
-
-2. gender: `String` (optional)
+1. gender: `String` (optional)
 
    Available values: `'male'`, `'female'`
 
-3. size: `String` (optional)
+2. size: `String` (optional)
 
    Available values: `'small'`, `'medium'`, `'large'`
+
+3. name: `String` (optional)
+
+   Available values: `Any string`,
 
 4. page: `Number` (optional)
 
@@ -28,7 +28,7 @@ _Query parameters_:
 
 5. sort: `String` (optional)
 
-   Available values: `'name'`, `'color'`
+   Available values: `'name'`, `'size'`
 
    Default value: `'name'`
 
@@ -39,7 +39,6 @@ _Response success_:
   records: Array<{
     _id: ObjectId,
     name: String,
-    color: String,
     gender: String,
     size: String,
     image: String,
