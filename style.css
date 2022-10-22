@@ -1,0 +1,15 @@
+:root {
+  --background-color: #eaeaea;
+  --contrast-color: #fceed5;
+  --accent-color: #103559;
+}
+
+body {
+  font-family: "Lato", sans-serif;
+  background-color: var(--background-color);
+}
+
+.container {
+  padding: 0 16px;
+  width: 100%;
+}
