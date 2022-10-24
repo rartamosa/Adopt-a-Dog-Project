@@ -8,11 +8,65 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap"
-      rel="stylesheet"
-    />
+      rel="stylesheet" />
     <link rel="stylesheet" href="./style.css" />
     <title>Monito</title>
   </head>
-  <body></body>
+  <body>
+    <header class="header">
+      <article class="header_navigation container">
+        <img
+          class="hamburger_open"
+          title="hamburger_open"
+          alt="hamburger_open"
+          src="./assets/hamburger_open.png" />
+        <img class="logo" title="logo" alt="logo" src="./assets/logo.png" />
+        <img
+          class="basket"
+          title="basket"
+          alt="basket"
+          src="./assets/basket.png" />
+        <div class="basket_quantity">2</div>
+        <nav class="navigation close">
+          <h3 class="navigation_heading">Menu</h3>
+          <ul class="navigation_links">
+            <li class="navigation_links__item">
+              <a class="navigation_links__element" href="#">Home</a>
+            </li>
+            <li class="navigation_links__item">
+              <a class="navigation_links__element" href="#">Category</a>
+            </li>
+            <li class="navigation_links__item">
+              <a class="navigation_links__element" href="#">About</a>
+            </li>
+            <li class="navigation_links__item">
+              <a class="navigation_links__element" href="#">Contact</a>
+            </li>
+          </ul>
+          <div class="button_container">
+            <button class="navigation_button">Join the community</button>
+          </div>
+          <span class="hamburger_close">&times;</span>
+        </nav>
+      </article>
+    </header>
+    <main class="main container">
+      <section class="hero">
+        <div class="hero_description">
+          <h1 class="hero_description__heading-first">One more friend</h1>
+          <h2 class="hero_description__heading-second">Thousands more fun!</h2>
+          <p class="hero_description__paragraph">
+            Having a pet means you have more joy, a new friend, a happy person
+            who will always be with you to have fun. We have 200+ different pets
+            that can become your friends!
+          </p>
+          <div class="hero_button__container">
+            <button class="hero_button">Explore Now</button>
+          </div>
+        </div>
+        <img class="puppies" src="./assets/puppies." />
+      </section>
+    </main>
+  </body>
   <script src="./app.js"></script>
 </html>
