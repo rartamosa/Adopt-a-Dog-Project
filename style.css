@@ -21,30 +21,102 @@ body {
 }
 
 .dogs-container__controls {
-  display: flex;
-  justify-content: space-between;
   align-items: center;
   margin-bottom: 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  position: relative;
 }
 
 .dogs-container__filter {
   display: flex;
   padding: 7px 10px;
   gap: 8px;
+  justify-content: flex-end;
+  font-family: "Lato";
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 24px;
+  background-color: transparent;
+  border: none;
 }
 
 .dogs-container__filter-button {
   width: 24px;
 }
 
-.dogs-container__filter-text {
+.dogs-container__filter-options {
+  display: none;
+  width: 50%;
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  padding: 10px;
+  background-color: var(--background-color);
+  border: 1px solid #ccd1d2;
+  border-top: none;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+
+.filtering_open {
+  display: flex;
+  flex-direction: column;
+}
+
+.dogs-container__filter-options_type {
   font-weight: 700;
   font-size: 16px;
   line-height: 24px;
+  padding-bottom: 10px;
+}
+
+.dogs-container__filter-options_checkbox {
+  display: flex;
+  gap: 5px;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.dogs-container__filter-options_line {
+  width: 100%;
+  margin: 16px 0;
+  border: 1px solid #ebeeef;
+}
+.dogs-container__filter-options_name {
+  background-color: #fff;
+  padding: 14px 15px;
+  border: 1px solid #99a2a5;
+  border-radius: 8px;
+  width: 172px;
+  font-family: "Lato";
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  margin-bottom: 34px;
+}
+
+.dogs-container__filter-options_button {
+  font-family: "Lato";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  padding: 12px 50px;
+  border: 1.5px solid #003459;
+  border-radius: 57px;
+  width: 136px;
+}
+
+.dogs-container__filter-options_button:hover {
+  background-color: var(--accent-color);
+  color: var(--background-color);
 }
 
 .dogs-container__dogs-header {
   margin-bottom: 16px;
+  margin: 25px 0 16px 0;
 }
 
 .dogs-container__dogs-title {
@@ -60,6 +132,62 @@ body {
   font-size: 14px;
   line-height: 20px;
   color: #667479;
+}
+
+.dogs-container__sorting {
+  grid-row: 1 / 2;
+}
+
+.dogs-container__sorting-button {
+  border: 1px solid #ccd1d2;
+  border-radius: 20px;
+  font-family: "Lato";
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  color: #667479;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 10px 4px 20px;
+  background-color: transparent;
+}
+
+.dogs-container__sorting-button_icon {
+  width: 24px;
+}
+
+.dogs-container__sorting-options {
+  width: 150px;
+  position: absolute;
+  padding: 20px;
+  background-color: var(--background-color);
+  border: 1px solid #ccd1d2;
+  border-radius: 20px;
+  top: 36px;
+  display: none;
+}
+
+.sorting_open {
+  display: block;
+}
+
+.dogs-container__sorting-options > li {
+  list-style: none;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  color: #667479;
+  text-align: center;
+}
+
+.dogs-container__sorting-options > li:hover {
+  background-color: #ccd1d2;
+  border-radius: 5px;
+}
+
+.dogs-container__sorting-options > li:last-of-type {
+  margin-top: 10px;
 }
 
 .dogs-container__dogs-list {
