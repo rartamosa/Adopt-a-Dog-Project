@@ -35,12 +35,6 @@ body {
   height: 32px;
 }
 
-.basket_container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
 .basket {
   width: 18.72px;
   height: 16.67px;
@@ -52,8 +46,8 @@ body {
   border-radius: 50%;
   background-color: #003459;
   position: relative;
-  top: -30px;
-  right: -15px;
+  top: 62px;
+  left: 355px;
   display: flex;
   justify-content: center;
   color: #fff;
@@ -189,6 +183,54 @@ body {
   border: none;
   color: #fdfdfd;
   padding: 10px 28px 10px 28px;
+  font-family: "Lato";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.footer {
+  background-color: var(--contrast-color);
+  padding-top: 40px;
+}
+
+.registration {
+  background-color: var(--main-blue-color);
+  display: flex;
+  flex-direction: column;
+  border-radius: 16px;
+  padding: 16px;
+}
+
+.registration_heading {
+  margin: 0;
+  font-family: "Lato";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 32px;
+  color: #fdfdfd;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  padding: 12px;
+}
+
+.footer_links {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  padding: 0;
+  margin: 0;
+  margin-top: 40px;
+}
+
+.footer_links__element {
+  text-decoration: none;
+  color: #00171f;
   font-family: "Lato";
   font-style: normal;
   font-weight: 500;
