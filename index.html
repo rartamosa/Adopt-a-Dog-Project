@@ -10,11 +10,11 @@
       href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap"
       rel="stylesheet" />
     <link rel="stylesheet" href="./style.css" />
+    <link href='https://css.gg/trash.css' rel='stylesheet'>
     <title>Monito</title>
   </head>
   <body>
     <header class="header">
-      <div class="basket_quantity">2</div>
       <article class="header_navigation container">
         <img
           class="hamburger_open"
@@ -22,12 +22,15 @@
           alt="hamburger_open"
           src="./assets/hamburger_open.png" />
         <img class="logo" title="logo" alt="logo" src="./assets/logo.png" />
-        <img
-          class="basket"
-          title="basket"
-          alt="basket"
-          src="./assets/basket.png" />
-        <nav class="navigation close">
+        <div class="basket_container">
+          <img
+            class="basket"
+            title="basket"
+            alt="basket"
+            src="./assets/basket.png" />
+          <div class="basket_quantity">2</div>
+        </div>
+        <nav class="navigation">
           <h3 class="navigation_heading">Menu</h3>
           <ul class="navigation_links">
             <li class="navigation_links__item">
@@ -48,6 +51,37 @@
           </div>
           <span class="hamburger_close">&times;</span>
         </nav>
+        <nav class="shop">
+          <h3 class="shop_heading">My dogs</h3>
+          <div class="shop_item">
+            <img class="shop_img" src="./assets/dog_in_basket.png" />
+            <span class="shop_img__desc">
+              <h4 class="shop_img_name">Fluffy</h4>
+              <h5 class="shop_img_gender">Male</h5>
+              <h6 class="shop_img_size">Small</h6>
+            </span>
+            <i class="gg-trash"></i>
+          </div>
+          <div class="shop_item">
+            <img class="shop_img" src="./assets/dog_in_basket.png" />
+            <span class="shop_img__desc">
+              <h4 class="shop_img_name">Fluffy</h4>
+              <h5 class="shop_img_gender">Male</h5>
+              <h6 class="shop_img_size">Small</h6>
+            </span>
+            <i class="gg-trash"></i>
+          </div>
+          <div class="shop_item">
+            <img class="shop_img" src="./assets/dog_in_basket.png" />
+            <span class="shop_img__desc">
+              <h4 class="shop_img_name">Fluffy</h4>
+              <h5 class="shop_img_gender">Male</h5>
+              <h6 class="shop_img_size">Small</h6>
+            </span>
+            <i class="gg-trash"></i>
+          </div>
+          <span class="shop_close">&times;</span>
+        </nav>
       </article>
     </header>
     <main class="main container">
@@ -64,15 +98,21 @@
             <button class="hero_button">Explore Now</button>
           </div>
         </div>
+        <img class="rectangle" src="./assets/rectangle.png" />
         <img class="puppies" src="./assets/puppies.png" />
       </section>
     </main>
     <footer class="footer container">
       <section class="registration">
-        <h4 class="registration_heading">Register now so you don't miss our programs</h4>
+        <h4 class="registration_heading">
+          Register now so you don't miss our programs
+        </h4>
         <form class="form">
-          <input type="text" placeholder="Enter your Email">
-          <button type="submit">Subcribe Now</button>
+          <input
+            class="form_item__input"
+            type="text"
+            placeholder="Enter your Email" />
+          <button class="form_item__button" type="submit">Subcribe Now</button>
         </form>
       </section>
       <section class="links">
@@ -90,21 +130,46 @@
             <a class="footer_links__element" href="#">Contact</a>
           </li>
         </ul>
-       <div class="footer_media">
-        <a class="footer_media__item">
-          <img src="./assets/facebook.png" title="facebook" alt="facebook"/>
-        </a>
-        <a class="footer_media__item">
-          <img src="./assets/twitter.png" title="twitter" alt="twitter"/>
-        </a>
-        <a class="footer_media__item">
-          <img src="./assets/instagram.png" title="instagram" alt="instagram"/>
-        </a>
-        <a class="footer_media__item">
-          <img src="./assets/youtube.png" title="youtube" alt="youtube"/>
-        </a>
-       </div>
+        <div class="footer_media">
+          <a class="footer_media__item">
+            <img
+              class="footer_media__element"
+              src="./assets/facebook.png"
+              title="facebook"
+              alt="facebook" />
+          </a>
+          <a class="footer_media__item">
+            <img
+              class="footer_media__element"
+              src="./assets/twitter.png"
+              title="twitter"
+              alt="twitter" />
+          </a>
+          <a class="footer_media__item">
+            <img
+              class="footer_media__element"
+              src="./assets/instagram.png"
+              title="instagram"
+              alt="instagram" />
+          </a>
+          <a class="footer_media__item">
+            <img
+              class="footer_media__element"
+              src="./assets/youtube.png"
+              title="youtube"
+              alt="youtube" />
+          </a>
+        </div>
       </section>
+      <div class="line"></div>
+      <div class="footer_information">
+        <img class="footer_logo" src="./assets/logo.png" />
+        <div class="terms">
+          <h5 class="terms_desc">Terms of Service</h5>
+          <h6 class="terms_desc">Privacy Policy</h6>
+        </div>
+        <h6 class="rights">© 2022 Monito. All rights reserved.</h6>
+      </div>
     </footer>
   </body>
   <script src="./app.js"></script>
