@@ -367,6 +367,16 @@ body {
     margin: 35px 0 35px 0;
     width: 100%;
   }
+  .dogs-container__dogs-header {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0;
+  }
+  .dogs-container__sorting {
+    grid-column: 4 / 5;
+    grid-row: 1 / 2;
+  }
   .dogs-container__sorting-options.sorting_open {
     top: unset;
   }
@@ -378,16 +388,27 @@ body {
     grid-template-columns: repeat(3, 1fr);
     grid-column: 2 / 3;
     grid-row: 1 / 2;
-    gap: 20px;
+    column-gap: 20px;
+    row-gap: 50px;
+    grid-auto-rows: max-content;
   }
-  .dogs-container__dogs-header {
-    position: absolute;
-    top: 0;
-    right: 0;
+  .dogs-container__dogs-list_example {
     margin: 0;
+    padding: 8px;
   }
-  .dogs-container__sorting {
-    grid-column: 4 / 5;
-    grid-row: 1 / 2;
+  .dogs-container__dogs-list_details {
+    padding: 0 0 12px 0;
+  }
+  .dogs-container__dogs-list_gender-size {
+    display: flex;
+  }
+  .dogs-container__dogs-list_dot {
+    display: inline;
+    font-size: 18px;
+    line-height: 18px;
+    color: #667479;
+    margin: 0 10px;
+    position: relative;
+    bottom: 2px;
   }
 }
