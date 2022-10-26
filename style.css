@@ -69,10 +69,10 @@ body {
   flex-direction: column;
   align-items: center;
   background-color: var(--background-color);
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
-  bottom: -100px;
+  bottom: 0;
   z-index: 1;
 }
 
@@ -127,21 +127,22 @@ body {
   left: 8px;
 }
 
-.visible {
-  display: inline;
-}
-
 .shop {
   display: none;
-  overflow: hidden;
+  overflow: auto;
   width: 100%;
   background-color: var(--background-color);
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
-  bottom: -114px;
+  bottom: 0;
   z-index: 1;
   padding: 0 40px;
+  box-sizing: border-box;
+}
+
+.visible {
+  display: inline;
 }
 
 .shop_heading {
@@ -160,6 +161,7 @@ body {
   border: 1px solid #667479;
   background-color: #fff;
   margin-bottom: 25px;
+  position: relative;
 }
 
 .shop_img {
@@ -204,10 +206,10 @@ body {
   color: #667479;
 }
 
-.gg-trash {
-  position: relative;
-  top: 14px;
-  left: 155px;
+.trash {
+  position: absolute;
+  top: 15px;
+  right: 15px;
 }
 
 .shop_close {
@@ -215,7 +217,7 @@ body {
   font-size: 45px;
   color: var(--main-blue-color);
   top: -7px;
-  left: 8px;
+  right: 8px;
 }
 
 .hero {
