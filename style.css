@@ -330,8 +330,9 @@ body {
   }
   .dogs-container__controls {
     display: block;
-    position: relative;
     margin: 0;
+    position: sticky;
+    top: 0;
   }
   .dogs-container__filter {
     padding: 0;
