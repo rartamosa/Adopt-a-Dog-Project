@@ -3,6 +3,8 @@
   --contrast-color: #fceed5;
   --accent-color: #103559;
   --main-blue-color: #003459;
+  --white-color: #fff;
+  --grey-color: #667479;
 }
 
 body {
@@ -31,7 +33,6 @@ body {
 }
 
 .logo {
-  width: 92px;
   height: 32px;
 }
 
@@ -40,7 +41,6 @@ body {
 }
 
 .basket {
-  width: 18.72px;
   height: 16.67px;
 }
 
@@ -48,14 +48,13 @@ body {
   width: 16px;
   height: 16px;
   border-radius: 50%;
-  background-color: #003459;
+  background-color: var(--main-blue-color);
   position: absolute;
   top: -11px;
   left: 13px;
   display: flex;
   justify-content: center;
-  color: #fff;
-  font-style: normal;
+  color: var(--white-color);
   font-weight: 700;
   font-size: 10px;
   line-height: 15px;
@@ -66,8 +65,6 @@ body {
   overflow: hidden;
   width: 100%;
   position: absolute;
-  flex-direction: column;
-  align-items: center;
   background-color: var(--background-color);
   position: fixed;
   top: 0;
@@ -80,7 +77,7 @@ body {
   color: var(--main-blue-color);
   text-transform: uppercase;
   margin: 0;
-  margin-top: 30px;
+  margin-top: 47px;
   margin-bottom: 30px;
   text-align: center;
   font-size: 26px;
@@ -97,6 +94,10 @@ body {
   margin-bottom: 20px;
 }
 
+.navigation_links__item :hover {
+  text-decoration: underline;
+}
+
 .navigation_links__element {
   text-decoration: none;
   color: var(--main-blue-color);
@@ -110,8 +111,9 @@ body {
 
 .navigation_button {
   background-color: var(--main-blue-color);
+  font-family: "Lato", sans-serif;
   border-radius: 8px;
-  color: #fdfdfd;
+  color: var(--white-color);
   border: none;
   width: 225px;
   height: 47px;
@@ -123,8 +125,8 @@ body {
   position: absolute;
   font-size: 45px;
   color: var(--main-blue-color);
-  top: -7px;
-  left: 8px;
+  top: 34px;
+  left: 13px;
 }
 
 .shop {
@@ -149,7 +151,7 @@ body {
   color: var(--main-blue-color);
   text-transform: uppercase;
   margin: 0;
-  margin-top: 30px;
+  margin-top: 47px;
   margin-bottom: 60px;
   text-align: center;
   font-size: 26px;
@@ -158,8 +160,8 @@ body {
 .shop_item {
   display: flex;
   border-radius: 10px;
-  border: 1px solid #667479;
-  background-color: #fff;
+  border: 1px solid var(--accent-color);
+  background-color: var(--white-color);
   margin-bottom: 25px;
   position: relative;
 }
@@ -177,9 +179,6 @@ body {
 
 .shop_img_name {
   margin: 0;
-  font-family: "Lato";
-  font-style: normal;
-  font-weight: 700;
   font-size: 22px;
   line-height: 24px;
   color: var(--main-blue-color);
@@ -187,37 +186,37 @@ body {
 
 .shop_img_gender {
   margin: 0;
-  font-family: "Lato";
-  font-style: normal;
-  font-weight: 700;
   font-size: 16px;
   line-height: 24px;
-  color: #667479;
+  color: var(--accent-color);
   margin-top: 8px;
 }
 
 .shop_img_size {
   margin: 0;
-  font-family: "Lato";
-  font-style: normal;
-  font-weight: 700;
   font-size: 16px;
   line-height: 24px;
-  color: #667479;
+  color: var(--accent-color);
 }
 
-.trash {
+.delete {
+  border: none;
+  background-color: var(--white-color);
   position: absolute;
   top: 15px;
-  right: 15px;
+  right: 6px;
+}
+
+.gg-trash {
+  color: var(--accent-color);
 }
 
 .shop_close {
   position: absolute;
   font-size: 45px;
   color: var(--main-blue-color);
-  top: -7px;
-  right: 8px;
+  top: 34px;
+  right: 13px;
 }
 
 .hero {
@@ -225,6 +224,7 @@ body {
   border-radius: 16px;
   overflow: hidden;
   position: relative;
+  margin-bottom: 26px;
 }
 
 .hero_description {
@@ -236,31 +236,26 @@ body {
 }
 
 .hero_description__heading-first {
-  font-style: normal;
+  text-transform: capitalize;
   font-weight: 900;
   font-size: 42px;
   line-height: 60px;
-  color: #002a48;
+  color: var(--accent-color);
   margin-top: 32px;
   margin-bottom: 0;
 }
 
 .hero_description__heading-second {
-  font-style: normal;
-  font-weight: 700;
   font-size: 26px;
   line-height: 38px;
-  color: #002a48;
+  color: var(--accent-color);
   margin: 0;
 }
 
 .hero_description__paragraph {
-  font-family: "Lato";
-  font-style: normal;
-  font-weight: 500;
   font-size: 12px;
   line-height: 18px;
-  color: #242b33;
+  color: var(--accent-color);
   margin-top: 12px;
   margin-bottom: 32px;
 }
@@ -284,14 +279,12 @@ body {
 }
 
 .hero_button {
-  background: #003459;
+  background: var(--accent-color);
   border-radius: 57px;
   border: none;
-  color: #fdfdfd;
-  padding: 10px 28px 10px 28px;
+  color: var(--white-color);
+  padding: 10px 28px;
   font-family: "Lato";
-  font-style: normal;
-  font-weight: 500;
   font-size: 16px;
   line-height: 24px;
 }
@@ -311,19 +304,17 @@ body {
 
 .registration_heading {
   margin: 0;
-  font-family: "Lato";
-  font-style: normal;
-  font-weight: 700;
   font-size: 20px;
   line-height: 32px;
-  color: #fdfdfd;
+  color: var(--white-color);
+  text-transform: capitalize;
 }
 
 .form {
   display: flex;
   flex-direction: column;
   padding: 12px;
-  background-color: #fff;
+  background-color: var(--white-color);
   border-radius: 14px;
   margin-top: 16px;
 }
@@ -333,27 +324,25 @@ body {
   display: flex;
   justify-content: space-between;
   padding: 0;
-  margin: 0;
   margin-top: 40px;
 }
 
 .footer_links__element {
   text-decoration: none;
-  color: #00171f;
-  font-family: "Lato";
-  font-style: normal;
-  font-weight: 500;
+  color: var(--main-blue-color);
   font-size: 16px;
   line-height: 24px;
 }
 
+.footer_links :hover {
+  text-decoration: underline;
+}
+
 .form_item__input {
-  padding: 14px 28px 14px 28px;
+  padding: 14px 28px;
   border-radius: 8px;
-  border: 1px solid #99a2a5;
+  border: 1px solid var(--grey-color);
   font-family: "Lato";
-  font-style: normal;
-  font-weight: 500;
   font-size: 14px;
   line-height: 20px;
 }
@@ -364,10 +353,8 @@ body {
   border-radius: 8px;
   border: none;
   background-color: var(--main-blue-color);
-  color: #fdfdfd;
+  color: var(--white-color);
   font-family: "Lato";
-  font-style: normal;
-  font-weight: 500;
   font-size: 16px;
   line-height: 24px;
 }
@@ -384,9 +371,9 @@ body {
 }
 
 .line {
-  width: 99%;
+  width: 100%;
   height: 1px;
-  background-color: #ccd1d2;
+  background-color: var(--grey-color);
   margin-top: 40px;
 }
 
@@ -398,34 +385,32 @@ body {
 }
 
 .footer_logo {
-  width: 115px;
   height: 40px;
 }
 
 .terms {
   display: flex;
   justify-content: space-between;
-  width: 178px;
   margin-top: 32px;
 }
 
 .terms_desc {
-  font-family: "Lato";
-  font-style: normal;
   font-weight: 500;
   font-size: 12px;
   line-height: 18px;
-  color: #667479;
+  color: var(--grey-color);
   margin: 0;
+}
+
+.terms_desc:first-child {
+  margin-right: 15px;
 }
 
 .rights {
   margin-top: 8px;
   margin-bottom: 20px;
-  font-family: "Lato";
-  font-style: normal;
   font-weight: 400;
   font-size: 10px;
   line-height: 16px;
-  color: #667479;
+  color: var(--grey-color);
 }
