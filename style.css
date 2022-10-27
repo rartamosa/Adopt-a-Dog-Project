@@ -432,6 +432,10 @@ body {
     padding: 0;
   }
 
+  .header {
+    margin-bottom: 40px;
+  }
+
   .hamburger_open {
     display: none;
   }
@@ -504,5 +508,58 @@ body {
     top: -3px;
     right: 16px;
     width: 20px;
+  }
+
+  .hero {
+    display: grid;
+    grid-template-columns: 58% 42%;
+    margin-bottom: 35px;
+  }
+
+  .hero_description {
+    order: 2;
+    margin: 64px 91px 56px 0;
+    text-align: end;
+    z-index: 1;
+    padding: 0;
+  }
+
+  .hero_description__heading-first {
+    font-size: 52px;
+    line-height: 68px;
+    color: var(--white-color);
+  }
+
+  .hero_description__heading-second {
+    font-size: 36px;
+    line-height: 54px;
+    color: var(--white-color);
+    margin-top: 2px;
+  }
+
+  .hero_description__paragraph {
+    color: var(--white-color);
+    margin-top: 12px;
+    margin-top: 8px;
+    margin-bottom: 24px;
+    flex-wrap: wrap;
+  }
+
+  .hero_button {
+    background-color: var(--white-color);
+    color: var(--accent-color);
+  }
+
+  .puppies {
+    width: 89%;
+    bottom: -94px;
+    left: 50px;
+  }
+
+  .rectangle {
+    transform: rotate(61deg);
+    left: 495px;
+    top: -140px;
+    width: 100%;
   }
 }
