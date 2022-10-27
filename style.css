@@ -25,7 +25,9 @@ body {
   margin-bottom: 20px;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  position: relative;
+  position: sticky;
+  top: 0;
+  background-color: var(--background-color);
 }
 
 .dogs-container__filter {
@@ -40,6 +42,8 @@ body {
   background-color: transparent;
   border: none;
   color: var(--accent-color);
+  width: 30%;
+  justify-self: end;
 }
 
 .dogs-container__filter-button {
@@ -61,6 +65,13 @@ body {
 .filtering_open {
   display: flex;
   flex-direction: column;
+}
+
+.dogs-container__filter-options_size {
+  border-top: 2px solid #ebeeef;
+  border-bottom: 2px solid #ebeeef;
+  margin: 16px 0px;
+  padding: 16px 0;
 }
 
 .dogs-container__filter-options_type {
@@ -310,4 +321,10 @@ body {
   background-color: var(--accent-color);
   color: #fff;
   border-radius: 8px;
+}
+
+.button.dogs-container__pagination_right:hover,
+.button.dogs-container__pagination_left:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 20%;
 }
