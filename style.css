@@ -430,7 +430,7 @@ body {
   position:fixed;
 }
 
-@media all and (min-width: 1200px) {
+@media all and (min-width: 1180px) {
 
   .position {
     position: static;
@@ -556,7 +556,6 @@ body {
 
   .hero_description__paragraph {
     color: var(--white-color);
-    margin-top: 12px;
     margin-top: 8px;
     margin-bottom: 24px;
     flex-wrap: wrap;
