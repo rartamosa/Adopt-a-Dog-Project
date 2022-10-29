@@ -142,6 +142,7 @@ body {
   z-index: 1;
   padding: 0 40px;
   box-sizing: border-box;
+  z-index: 2;
 }
 
 .visible {
@@ -425,7 +426,16 @@ body {
   display: none;
 }
 
+.position {
+  position:fixed;
+}
+
 @media all and (min-width: 1200px) {
+
+  .position {
+    position: static;
+  }
+
   .container {
     margin: 0 auto;
     width: 1180px;
@@ -434,6 +444,10 @@ body {
 
   .header {
     margin-bottom: 40px;
+  }
+
+  .header_navigation {
+    position: relative;
   }
 
   .hamburger_open {
@@ -493,10 +507,13 @@ body {
 
   .shop {
     width: 28%;
-    top: 100px;
-    left: 63%;
+    top: 91px;
+    right: 0;
+    left: unset;
     border-radius: 10px;
     border: 1px solid var(--accent-color);
+    position: absolute;
+    height: 500px;
   }
 
   .shop_heading {
@@ -552,7 +569,7 @@ body {
 
   .puppies {
     width: 89%;
-    bottom: -94px;
+    bottom: -125px;
     left: 50px;
   }
 

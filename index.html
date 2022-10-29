@@ -15,8 +15,9 @@
   </head>
   <body>
     <header class="header">
-      <article class="header_navigation container">
-        <img
+      <article class="container">
+        <div class="header_navigation">
+          <img
           class="hamburger_open"
           title="hamburger_open"
           alt="hamburger_open"
@@ -167,6 +168,7 @@
           </div>
           <span class="shop_close">&times;</span>
         </nav>
+        </div>
       </article>
     </header>
     <main class="main container">
@@ -189,11 +191,13 @@
           title="rectangle"
           alt="rectangle"
           src="./assets/rectangle.png" />
-        <img
-          class="puppies"
-          title="puppies"
-          alt="puppies"
-          src="./assets/puppies.png" />
+          <picture>
+            <source media="(max-width:1179px)"
+            srcset="./assets/puppies.png"/>
+            <source media="(min-width:1180px)"
+            srcset="./assets/puppies-desktop.png"/>
+            <img class="puppies" title="puppies" alt="puppies" src="./assets/puppies.png"/>
+          </picture>
         </div>
       </section>
     </main>
