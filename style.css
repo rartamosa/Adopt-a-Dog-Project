@@ -427,7 +427,7 @@ body {
 
 @media all and (min-width: 1200px) {
   .container {
-    margin: 0 auto;
+    margin: 30px auto;
     width: 1180px;
     padding: 0;
   }
@@ -437,10 +437,6 @@ body {
   }
 
   .logo {
-    display: none;
-  }
-
-  .menu-logo {
     height: 40px;
     margin-right: 48px;
   }
@@ -450,7 +446,6 @@ body {
     list-style: none;
     padding: 0;
     align-items: center;
-    margin: 30px 0;
   }
 
   .menu_links__item :hover {
