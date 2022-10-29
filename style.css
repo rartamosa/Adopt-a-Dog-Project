@@ -323,8 +323,8 @@ body {
   border-radius: 8px;
 }
 
-.button.dogs-container__pagination_right:hover,
-.button.dogs-container__pagination_left:hover {
+.dogs-container__pagination_right:hover,
+.dogs-container__pagination_left:hover {
   background-color: rgba(0, 0, 0, 0.1);
   border-radius: 20%;
 }
