@@ -13,6 +13,267 @@
     <link rel="stylesheet" href="./style.css" />
     <title>Monito</title>
   </head>
-  <body></body>
+  <body>
+    <section class="dogs-container container">
+      <div class="dogs-container__controls">
+        <button class="dogs-container__filter">
+          Filter
+          <img
+            src="./assets/filter_icon.png"
+            alt="Filter"
+            title="Filter"
+            class="dogs-container__filter-button"
+          />
+        </button>
+        <form class="dogs-container__filter-options">
+          <h4 class="dogs-container__filter-options_type">Gender</h4>
+          <div class="dogs-container__filter-options_gender">
+            <span class="dogs-container__filter-options_checkbox">
+              <input
+                type="radio"
+                id="male"
+                name="gender"
+                value="Male"
+                class="checkbox"
+              />
+              <label for="male">Male</label>
+            </span>
+            <span class="dogs-container__filter-options_checkbox">
+              <input
+                type="radio"
+                id="female"
+                name="gender"
+                value="Female"
+                class="checkbox"
+              />
+              <label for="female">Female</label>
+            </span>
+          </div>
+          <div class="dogs-container__filter-options_size">
+            <h4 class="dogs-container__filter-options_type">Size</h4>
+            <span class="dogs-container__filter-options_checkbox">
+              <input
+                type="radio"
+                id="small"
+                name="size"
+                value="Small"
+                class="checkbox"
+              />
+              <label for="small">Small</label>
+            </span>
+            <span class="dogs-container__filter-options_checkbox">
+              <input
+                type="radio"
+                id="medium"
+                name="size"
+                value="Medium"
+                class="checkbox"
+              />
+              <label for="medium">Medium</label>
+            </span>
+            <span class="dogs-container__filter-options_checkbox">
+              <input
+                type="radio"
+                id="large"
+                name="size"
+                value="Large"
+                class="checkbox"
+              />
+              <label for="large">Large</label>
+            </span>
+          </div>
+          <h4 class="dogs-container__filter-options_type">Name</h4>
+          <input
+            type="text"
+            placeholder="Type name"
+            class="dogs-container__filter-options_name"
+          />
+          <button type="submit" class="dogs-container__filter-options_button">
+            Apply
+          </button>
+        </form>
+        <div class="dogs-container__dogs-header">
+          <span class="dogs-container__dogs-title">Dogs</span>
+          <span class="dogs-container__dogs-count">30 total</span>
+        </div>
+        <div class="dogs-container__sorting">
+          <button class="dogs-container__sorting-button" type="button">
+            Sort by: Name
+            <img
+              src="./assets/dropdown_icon.png"
+              alt="dropdown"
+              title="dropdown"
+              class="dogs-container__sorting-button_icon"
+            />
+          </button>
+        </div>
+        <ul class="dogs-container__sorting-options">
+          <li>Sort by: Name</li>
+          <li>Sort by: Size</li>
+        </ul>
+      </div>
+
+      <div class="dogs-container__dogs-list">
+        <span class="dogs-container__dogs-list_example">
+          <img
+            src="./assets/example_dog.png"
+            alt="dog"
+            title="dog"
+            class="dogs-container__dogs-list_img"
+          />
+          <div class="dogs-container__dogs-list_details">
+            <h3 class="dogs-container__dogs-list_name">Fluffy</h3>
+            <span class="dogs-container__dogs-list_1stline">
+              <p class="dogs-container__dogs-list_feature">Gender:</p>
+              <p class="dogs-container__dogs-list_desc">Female</p>
+            </span>
+            <img
+              src="./assets/dot.png"
+              alt="dot"
+              title="dot"
+              class="dogs-container__dogs-list_dot"
+            />
+            <span class="dogs-container__dogs-list_2ndline">
+              <p class="dogs-container__dogs-list_feature">Size:</p>
+              <p class="dogs-container__dogs-list_desc">Small</p>
+            </span>
+          </div>
+        </span>
+        <span class="dogs-container__dogs-list_example">
+          <img
+            src="./assets/example_dog.png"
+            alt="dog"
+            title="dog"
+            class="dogs-container__dogs-list_img"
+          />
+          <div class="dogs-container__dogs-list_details">
+            <h3 class="dogs-container__dogs-list_name">Fluffy</h3>
+            <span class="dogs-container__dogs-list_1stline">
+              <p class="dogs-container__dogs-list_feature">Gender:</p>
+              <p class="dogs-container__dogs-list_desc">Female</p>
+            </span>
+            <img
+              src="./assets/dot.png"
+              alt="dot"
+              title="dot"
+              class="dogs-container__dogs-list_dot"
+            />
+            <span class="dogs-container__dogs-list_2ndline">
+              <p class="dogs-container__dogs-list_feature">Size:</p>
+              <p class="dogs-container__dogs-list_desc">Small</p>
+            </span>
+          </div>
+        </span>
+        <span class="dogs-container__dogs-list_example">
+          <img
+            src="./assets/example_dog.png"
+            alt="dog"
+            title="dog"
+            class="dogs-container__dogs-list_img"
+          />
+          <div class="dogs-container__dogs-list_details">
+            <h3 class="dogs-container__dogs-list_name">Fluffy</h3>
+            <span class="dogs-container__dogs-list_1stline">
+              <p class="dogs-container__dogs-list_feature">Gender:</p>
+              <p class="dogs-container__dogs-list_desc">Female</p>
+            </span>
+            <img
+              src="./assets/dot.png"
+              alt="dot"
+              title="dot"
+              class="dogs-container__dogs-list_dot"
+            />
+            <span class="dogs-container__dogs-list_2ndline">
+              <p class="dogs-container__dogs-list_feature">Size:</p>
+              <p class="dogs-container__dogs-list_desc">Small</p>
+            </span>
+          </div>
+        </span>
+        <span class="dogs-container__dogs-list_example">
+          <img
+            src="./assets/example_dog.png"
+            alt="dog"
+            title="dog"
+            class="dogs-container__dogs-list_img"
+          />
+          <div class="dogs-container__dogs-list_details">
+            <h3 class="dogs-container__dogs-list_name">Fluffy</h3>
+            <span class="dogs-container__dogs-list_1stline">
+              <p class="dogs-container__dogs-list_feature">Gender:</p>
+              <p class="dogs-container__dogs-list_desc">Female</p>
+            </span>
+            <img
+              src="./assets/dot.png"
+              alt="dot"
+              title="dot"
+              class="dogs-container__dogs-list_dot"
+            />
+            <span class="dogs-container__dogs-list_2ndline">
+              <p class="dogs-container__dogs-list_feature">Size:</p>
+              <p class="dogs-container__dogs-list_desc">Small</p>
+            </span>
+          </div>
+        </span>
+        <span class="dogs-container__dogs-list_example">
+          <img
+            src="./assets/example_dog.png"
+            alt="dog"
+            title="dog"
+            class="dogs-container__dogs-list_img"
+          />
+          <div class="dogs-container__dogs-list_details">
+            <h3 class="dogs-container__dogs-list_name">Fluffy</h3>
+            <span class="dogs-container__dogs-list_1stline">
+              <p class="dogs-container__dogs-list_feature">Gender:</p>
+              <p class="dogs-container__dogs-list_desc">Female</p>
+            </span>
+            <img
+              src="./assets/dot.png"
+              alt="dot"
+              title="dot"
+              class="dogs-container__dogs-list_dot"
+            />
+            <span class="dogs-container__dogs-list_2ndline">
+              <p class="dogs-container__dogs-list_feature">Size:</p>
+              <p class="dogs-container__dogs-list_desc">Small</p>
+            </span>
+          </div>
+        </span>
+        <span class="dogs-container__dogs-list_example">
+          <img
+            src="./assets/example_dog.png"
+            alt="dog"
+            title="dog"
+            class="dogs-container__dogs-list_img"
+          />
+          <div class="dogs-container__dogs-list_details">
+            <h3 class="dogs-container__dogs-list_name">Fluffy</h3>
+            <span class="dogs-container__dogs-list_1stline">
+              <p class="dogs-container__dogs-list_feature">Gender:</p>
+              <p class="dogs-container__dogs-list_desc">Female</p>
+            </span>
+            <img
+              src="./assets/dot.png"
+              alt="dot"
+              title="dot"
+              class="dogs-container__dogs-list_dot"
+            />
+            <span class="dogs-container__dogs-list_2ndline">
+              <p class="dogs-container__dogs-list_feature">Size:</p>
+              <p class="dogs-container__dogs-list_desc">Small</p>
+            </span>
+          </div>
+        </span>
+      </div>
+
+      <div class="dogs-container__pagination">
+        <button class="dogs-container__pagination_left"></button>
+        <button class="dogs-container__pagination_page">1</button>
+        <button class="dogs-container__pagination_page">2</button>
+        <button class="dogs-container__pagination_page">3</button>
+        <button class="dogs-container__pagination_right"></button>
+      </div>
+    </section>
+  </body>
   <script src="./app.js"></script>
 </html>

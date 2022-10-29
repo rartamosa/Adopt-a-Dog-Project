@@ -4,6 +4,12 @@
   --accent-color: #103559;
 }
 
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
 body {
   font-family: "Lato", sans-serif;
   background-color: var(--background-color);
@@ -12,4 +18,313 @@ body {
 .container {
   padding: 0 16px;
   width: 100%;
+}
+
+.dogs-container__controls {
+  align-items: center;
+  margin-bottom: 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  position: sticky;
+  top: 0;
+  background-color: var(--background-color);
+}
+
+.dogs-container__filter {
+  display: flex;
+  padding: 7px 10px;
+  gap: 8px;
+  justify-content: flex-end;
+  font-family: "Lato";
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 24px;
+  background-color: transparent;
+  border: none;
+  color: var(--accent-color);
+  width: 30%;
+  justify-self: end;
+}
+
+.dogs-container__filter-button {
+  width: 24px;
+}
+
+.dogs-container__filter-options {
+  display: none;
+  width: 50%;
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  padding: 10px;
+  background-color: var(--background-color);
+  border: 1px solid #667479;
+  border-radius: 20px;
+}
+
+.filtering_open {
+  display: flex;
+  flex-direction: column;
+}
+
+.dogs-container__filter-options_size {
+  border-top: 2px solid #ebeeef;
+  border-bottom: 2px solid #ebeeef;
+  margin: 16px 0px;
+  padding: 16px 0;
+}
+
+.dogs-container__filter-options_type {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 24px;
+  padding-bottom: 10px;
+}
+
+.dogs-container__filter-options_checkbox {
+  display: flex;
+  gap: 5px;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  cursor: pointer;
+}
+
+.checkbox {
+  width: 0;
+  height: 0;
+  position: relative;
+}
+
+.checkbox::after {
+  content: "";
+  display: block;
+  width: 16px;
+  height: 16px;
+  border: 1px solid var(--accent-color);
+  border-radius: 4px;
+}
+
+.checkbox:checked::after {
+  background-color: var(--accent-color);
+}
+
+.checkbox + label {
+  margin-left: 20px;
+}
+
+.dogs-container__filter-options_line {
+  width: 100%;
+  margin: 16px 0;
+  border: 1px solid #ebeeef;
+}
+
+.dogs-container__filter-options_name {
+  background-color: #fff;
+  padding: 14px 15px;
+  border: 1px solid var(--background-color);
+  border-radius: 8px;
+  width: 100%;
+  font-family: "Lato";
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  margin-bottom: 34px;
+}
+
+.dogs-container__filter-options_button {
+  font-family: "Lato";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  padding: 12px 50px;
+  border: 1.5px solid var(--accent-color);
+  border-radius: 57px;
+  width: 136px;
+  background-color: transparent;
+  color: var(--accent-color);
+}
+
+.dogs-container__filter-options_button:hover {
+  background-color: var(--accent-color);
+  color: var(--background-color);
+}
+
+.dogs-container__dogs-header {
+  margin-bottom: 16px;
+  margin: 25px 0 16px 0;
+}
+
+.dogs-container__dogs-title {
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 36px;
+  color: var(--accent-color);
+  padding-right: 15px;
+}
+
+.dogs-container__dogs-count {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  color: #667479;
+}
+
+.dogs-container__sorting {
+  grid-row: 1 / 2;
+}
+
+.dogs-container__sorting-button {
+  border: 1px solid #667479;
+  border-radius: 20px;
+  font-family: "Lato";
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  color: #667479;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 10px 4px 20px;
+  background-color: transparent;
+}
+
+.dogs-container__sorting-button_icon {
+  width: 24px;
+}
+
+.dogs-container__sorting-options {
+  width: 150px;
+  position: absolute;
+  padding: 20px;
+  background-color: var(--background-color);
+  border: 1px solid #667479;
+  border-radius: 20px;
+  top: 36px;
+  display: none;
+}
+
+.sorting_open {
+  display: block;
+}
+
+.dogs-container__sorting-options > li {
+  list-style: none;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  color: #667479;
+  text-align: center;
+}
+
+.dogs-container__sorting-options > li:hover {
+  background-color: #ccd1d2;
+  border-radius: 5px;
+}
+
+.dogs-container__sorting-options > li:last-of-type {
+  margin-top: 10px;
+}
+
+.dogs-container__dogs-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px;
+}
+
+.dogs-container__dogs-list_example {
+  background-color: #fff;
+  border-radius: 12px;
+  width: fit-content;
+  margin-bottom: 56px;
+}
+
+.dogs-container__dogs-list_img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.dogs-container__dogs-list_name {
+  margin: 0 0 4px 0;
+  color: var(--accent-color);
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.dogs-container__dogs-list_details {
+  padding: 4px;
+}
+
+.dogs-container__dogs-list_1stline,
+.dogs-container__dogs-list_2ndline {
+  display: flex;
+  gap: 4px;
+}
+
+.dogs-container__dogs-list_dot {
+  display: none;
+}
+
+.dogs-container__dogs-list_feature,
+.dogs-container__dogs-list_desc {
+  font-size: 12px;
+  color: #667479;
+  line-height: 18px;
+  margin: 4px 0 0 0;
+}
+
+.dogs-container__dogs-list_desc {
+  font-weight: 700;
+}
+
+.dogs-container__pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  width: 100%;
+  margin-bottom: 74px;
+}
+
+.dogs-container__pagination_left {
+  background-image: url(./assets/arrow_left.png);
+}
+
+.dogs-container__pagination_right {
+  background-image: url(./assets/arrow_right.png);
+}
+
+.dogs-container__pagination_left,
+.dogs-container__pagination_right {
+  background-size: 24px;
+  width: 24px;
+  height: 24px;
+  background-position: center;
+  background-repeat: no-repeat;
+  border: none;
+  background-color: transparent;
+}
+
+.dogs-container__pagination_page {
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 24px;
+  padding: 6px 13px 4px;
+  background-color: transparent;
+  border: none;
+  color: var(--accent-color);
+}
+
+.dogs-container__pagination_page:hover,
+.dogs-container__pagination_page:active {
+  background-color: var(--accent-color);
+  color: #fff;
+  border-radius: 8px;
+}
+
+.dogs-container__pagination_right:hover,
+.dogs-container__pagination_left:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 20%;
 }
