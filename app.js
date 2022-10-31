@@ -9,6 +9,8 @@ const sortingButton = document.querySelector(".dogs-container__sorting-button");
 const filterButton = document.querySelector(".dogs-container__filter");
 const filterOptions = document.querySelector(".dogs-container__filter-options");
 const filterClose = document.querySelector(".filter-close");
+const adoptButton = document.querySelector(".dogs-container__dogs-list_button");
+const basketContainer = document.querySelector(".basket_quantity");
 
 const URL = "https://dogs-api-group-project-1.herokuapp.com";
 
@@ -48,3 +50,30 @@ filterClose.addEventListener("click", () => {
   filterOptions.classList.remove("filtering_open");
   body.classList.remove("position");
 });
+
+adoptButton.forEeach((singleAdopt) => {
+  singleAdopt.addEventListener("click", (event) => {
+    basket.innerHTML += `
+    <div class="shop_item">
+              <img
+                class="shop_img"
+                data-id="${event.target.dataset._id}"
+                title="my-dog"
+                alt="my-dog"
+                src=""
+              />
+              <span class="shop_img__desc">
+                <h4 class="shop_img_name">Fluffy</h4>
+                <h5 class="shop_img_gender">Male</h5>
+                <h6 class="shop_img_size">Small</h6>
+              </span>
+              <button class="delete">
+                <i class="gg-trash"></i>
+              </button>
+            </div>
+    `;
+  });
+  const deleteButton = document.querySelector(".delete");
+});
+
+
