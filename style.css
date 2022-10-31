@@ -779,13 +779,29 @@ body {
   margin-bottom: 56px;
 }
 
+.dogs-container__dogs-list_gender-size {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.dogs-container__dogs-list_button {
+  background-color: var(--accent-color);
+  color: var(--white-color);
+  border-radius: 57px;
+  border: none;
+  padding: 9.5px 16.5px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
 .dogs-container__dogs-list_img {
   width: 100%;
   border-radius: 10px;
 }
 
 .dogs-container__dogs-list_name {
-  margin: 0 0 4px 0;
+  margin: 0;
   color: var(--accent-color);
   font-size: 16px;
   line-height: 24px;
@@ -954,9 +970,7 @@ body {
   .dogs-container__dogs-list_details {
     padding: 0 0 12px 0;
   }
-  .dogs-container__dogs-list_gender-size {
-    display: flex;
-  }
+  
   .dogs-container__dogs-list_dot {
     display: inline;
     font-size: 18px;
