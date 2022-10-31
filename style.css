@@ -572,7 +572,7 @@ body {
   .registration {
     padding: 32px;
     display: grid;
-    grid-template-columns: 35% 64%;
+    grid-template-columns: 35% 63%;
     grid-gap: 20px;
   }
 
