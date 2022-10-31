@@ -12,11 +12,8 @@ const filterOptions = document.querySelector(".dogs-container__filter-options");
 const filterClose = document.querySelector(".filter-close");
 const URL = "https://dogs-api-group-project-1.herokuapp.com";
 const dogsContainer = document.querySelector(".dogs-container__dogs-list");
-const paginationPagesContainer = document.querySelector(
-  ".dogs-container__pagination-pages"
-);
-const paginationNavigation = document.querySelectorAll(
-  ".dogs-container__pagination_navigation"
+const paginationNavigation = document.querySelector(
+  ".dogs-container__pagination"
 );
 let pageNumber = 1;
 
@@ -58,6 +55,7 @@ filterClose.addEventListener("click", () => {
 });
 
 const onPaginationClick = (newPage) => {
+  console.log(newPage);
   if (newPage !== 0 && newPage <= 3) {
     pageNumber = newPage;
     fetchDogs();
@@ -65,7 +63,6 @@ const onPaginationClick = (newPage) => {
 };
 
 const fetchDogs = () => {
-  console.log(pageNumber);
   fetch(`${URL}/dogs?page=${pageNumber}`)
     .then((res) => res.json())
     .then((data) => {
@@ -98,22 +95,26 @@ const fetchDogs = () => {
         </div>
         `;
       });
-      paginationPagesContainer.innerHTML = "";
+      paginationNavigation.innerHTML = "";
+      paginationNavigation.innerHTML += `
+        <button
+          class="dogs-container__pagination_left dogs-container__pagination_navigation"
+          data-direction="left"
+          onclick="onPaginationClick(pageNumber - 1)"
+        ></button>
+      `;
       for (let i = 1; i <= Math.ceil(data.totalCount / 12); i++) {
-        paginationPagesContainer.innerHTML += `
+        paginationNavigation.innerHTML += `
         <button class="dogs-container__pagination_page pagination_${i}" onclick="onPaginationClick(${i})">${i}</button>
         `;
-        const paginationButton = document.querySelector(`.pagination_${i}`);
       }
-      paginationNavigation.forEach((item) => {
-        item.addEventListener("click", () => {
-          if (item.dataset.direction === "left") {
-            onPaginationClick(pageNumber - 1);
-          } else if (item.dataset.direction === "right") {
-            onPaginationClick(pageNumber + 1);
-          }
-        });
-      });
+      paginationNavigation.innerHTML += `
+        <button
+          class="dogs-container__pagination_right dogs-container__pagination_navigation"
+          data-direction="right"
+          onclick="onPaginationClick(pageNumber + 1)"
+        ></button>
+      `;
     })
     .catch((err) => {
       dogsContainer.innerHTML = `
