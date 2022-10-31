@@ -24,6 +24,7 @@ body {
   z-index: 1;
 }
 
+
 .header_navigation {
   margin-top: 47px;
   margin-bottom: 50px;
@@ -48,6 +49,7 @@ body {
 
 .basket {
   height: 16.67px;
+  margin-right: 13px;
 }
 
 .basket_quantity {
@@ -436,7 +438,6 @@ body {
   width: 100%;
 }
 
-
 @media all and (min-width: 1200px) {
   .container {
     margin: 30px auto;
@@ -497,7 +498,7 @@ body {
 
   .shop {
     width: 28%;
-    top: 100px;
+    top: 92px;
     left: 63%;
     border-radius: 10px;
     border: 1px solid var(--accent-color);
