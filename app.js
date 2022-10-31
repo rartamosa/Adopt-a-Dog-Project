@@ -23,22 +23,18 @@ filterButton.addEventListener("click", () => {
 });
 
 hamburgerOpen.addEventListener("click", () => {
-  body.style.position = "fixed";
   navigation.classList.add("visible");
 });
 
 hamburgerClose.addEventListener("click", () => {
-  body.style.position = "static";
   navigation.classList.remove("visible");
 });
 
 openBasket.addEventListener("click", () => {
-  body.style.position = "fixed";
   basket.classList.add("visible");
 });
 
 closeBasket.addEventListener("click", () => {
-  body.style.position = "static";
   basket.classList.remove("visible");
 });
 
