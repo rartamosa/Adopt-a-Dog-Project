@@ -1,3 +1,4 @@
+const URL = "https://dogs-api-group-project-1.herokuapp.com";
 const body = document.querySelector("body");
 const navigation = document.querySelector(".navigation");
 const hamburgerOpen = document.querySelector(".hamburger_open");
@@ -9,6 +10,9 @@ const sortingButton = document.querySelector(".dogs-container__sorting-button");
 const filterButton = document.querySelector(".dogs-container__filter");
 const filterOptions = document.querySelector(".dogs-container__filter-options");
 const filterClose = document.querySelector(".filter-close");
+const cart = document.querySelector(".shop");
+
+const URL = "https://dogs-api-group-project-1.herokuapp.com";
 
 sortingButton.addEventListener("click", () => {
   const sortingOptions = document.querySelector(
