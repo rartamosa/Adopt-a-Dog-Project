@@ -967,6 +967,11 @@ body {
     margin: 0;
     padding: 8px;
   }
+
+  .dogs-container__dogs-list_info {
+    display: flex;
+  }
+
   .dogs-container__dogs-list_details {
     padding: 0 0 12px 0;
   }
