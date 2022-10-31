@@ -573,13 +573,13 @@ body {
     padding: 32px;
     display: grid;
     grid-template-columns: 35% 63%;
-    grid-gap: 20px;
+    grid-gap: 2%;
   }
 
   .form {
     display: grid;
     grid-template-columns: 74% 24%;
-    grid-gap: 12px;
+    grid-gap: 2%;
     margin: 0;
   }
 
