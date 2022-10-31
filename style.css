@@ -572,15 +572,16 @@ body {
   .registration {
     padding: 32px;
     display: grid;
-    grid-template-columns: 35% 63%;
-    grid-gap: 2%;
+    grid-template-columns: 36fr 64fr;
+    grid-column-gap: 20px;
   }
 
   .form {
     display: grid;
-    grid-template-columns: 74% 24%;
-    grid-gap: 2%;
+    grid-template-columns: 75fr 25fr;
+    grid-column-gap: 12px;
     margin: 0;
+    box-sizing: border-box;
   }
 
   .registration_heading {
