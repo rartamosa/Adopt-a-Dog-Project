@@ -445,7 +445,9 @@ body {
     display: flex;
     list-style: none;
     padding: 0;
+    margin-right: auto;
     align-items: center;
+    gap: 48px;
   }
 
   .menu_links__item :hover {
@@ -457,7 +459,6 @@ body {
     color: var(--main-blue-color);
     font-size: 16px;
     font-weight: 700;
-    margin-right: 48px;
   }
 
   .menu_controls {
