@@ -16,8 +16,9 @@
   </head>
   <body>
     <header class="header">
-      <article class="header_navigation container">
-        <img
+      <article class="container">
+        <div class="header_navigation">
+          <img
           class="hamburger_open"
           title="hamburger_open"
           alt="hamburger_open"
@@ -187,18 +188,20 @@
             <button class="hero_button">Explore Now</button>
           </div>
         </div>
-        <img
+        <div class="hero_images">
+          <img
           class="rectangle"
           title="rectangle"
           alt="rectangle"
-          src="./assets/rectangle.png"
-        />
-        <img
-          class="puppies"
-          title="puppies"
-          alt="puppies"
-          src="./assets/puppies.png"
-        />
+          src="./assets/rectangle.png" />
+          <picture>
+            <source media="(max-width:1179px)"
+            srcset="./assets/puppies.png"/>
+            <source media="(min-width:1180px)"
+            srcset="./assets/puppies-desktop.png"/>
+            <img class="puppies" title="puppies" alt="puppies" src="./assets/puppies.png"/>
+          </picture>
+        </div>
       </section>
     </main>
     <section class="dogs-container container">

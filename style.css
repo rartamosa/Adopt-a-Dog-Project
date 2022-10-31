@@ -33,13 +33,12 @@ body {
 
 .header {
   background-color: var(--background-color);
-  z-index: 1;
+  z-index: 2;
   position: sticky;
   top: 0;
   height: fit-content;
   padding: 47px 0 50px 0;
 }
-
 
 .header_navigation {
   display: flex;
@@ -167,6 +166,7 @@ body {
   z-index: 1;
   padding: 0 40px;
   box-sizing: border-box;
+  z-index: 2;
 }
 
 .visible {
@@ -450,11 +450,27 @@ body {
   display: none;
 }
 
-@media all and (min-width: 1200px) {
+.position {
+  position: fixed;
+}
+
+@media all and (min-width: 1180px) {
+  .position {
+    position: static;
+  }
+
   .container {
     margin: 0 auto;
     width: 1180px;
     padding: 0;
+  }
+
+  .header {
+    margin-bottom: 40px;
+  }
+
+  .header_navigation {
+    position: relative;
   }
 
   .hamburger_open {
@@ -510,10 +526,13 @@ body {
 
   .shop {
     width: 28%;
-    top: 90px;
-    left: 63%;
+    top: 67px;
+    right: 0;
+    left: unset;
     border-radius: 10px;
     border: 1px solid var(--accent-color);
+    position: absolute;
+    height: 500px;
   }
 
   .shop_heading {
@@ -952,5 +971,56 @@ body {
     grid-column: 1 / 3;
     justify-content: flex-end;
     margin: 50px 0 0 0;
+  }
+  .hero {
+    display: grid;
+    grid-template-columns: 58% 42%;
+    margin-bottom: 35px;
+  }
+
+  .hero_description {
+    order: 2;
+    margin: 64px 91px 56px 0;
+    text-align: end;
+    z-index: 1;
+    padding: 0;
+  }
+
+  .hero_description__heading-first {
+    font-size: 52px;
+    line-height: 68px;
+    color: var(--white-color);
+  }
+
+  .hero_description__heading-second {
+    font-size: 36px;
+    line-height: 54px;
+    color: var(--white-color);
+    margin-top: 2px;
+  }
+
+  .hero_description__paragraph {
+    color: var(--white-color);
+    margin-top: 8px;
+    margin-bottom: 24px;
+    flex-wrap: wrap;
+  }
+
+  .hero_button {
+    background-color: var(--white-color);
+    color: var(--accent-color);
+  }
+
+  .puppies {
+    width: 89%;
+    bottom: -125px;
+    left: 50px;
+  }
+
+  .rectangle {
+    transform: rotate(61deg);
+    left: 495px;
+    top: -140px;
+    width: 100%;
   }
 }

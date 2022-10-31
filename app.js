@@ -23,19 +23,23 @@ filterButton.addEventListener("click", () => {
 });
 
 hamburgerOpen.addEventListener("click", () => {
+  body.classList.add("position");
   navigation.classList.add("visible");
 });
 
 hamburgerClose.addEventListener("click", () => {
   navigation.classList.remove("visible");
+  body.classList.remove("position");
 });
 
 openBasket.addEventListener("click", () => {
+  body.classList.add("position");
   basket.classList.add("visible");
 });
 
 closeBasket.addEventListener("click", () => {
   basket.classList.remove("visible");
+  body.classList.remove("position");
 });
 
 filterClose.addEventListener("click", () => {
