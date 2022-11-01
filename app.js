@@ -58,6 +58,10 @@ const onPaginationClick = (newPage, maxPage) => {
   if (newPage !== 0 && newPage <= maxPage) {
     pageNumber = newPage;
     fetchDogs();
+    dogsContainer.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
   }
 };
 
@@ -101,7 +105,7 @@ const fetchDogs = () => {
           data-direction="left"
           onclick="onPaginationClick(pageNumber - 1, ${Math.ceil(
             data.totalCount / 12
-          )})" onclick="scrollTo${(0, 890)}"
+          )})"
         ></button>
       `;
       for (let i = 1; i <= Math.ceil(data.totalCount / 12); i++) {

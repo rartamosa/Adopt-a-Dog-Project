@@ -646,6 +646,7 @@ body {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 28px;
+  scroll-margin-top: 115px;
 }
 
 .error-message {
@@ -830,6 +831,7 @@ body {
     column-gap: 20px;
     row-gap: 50px;
     grid-auto-rows: max-content;
+    scroll-margin-top: 0;
   }
   .dogs-container__dogs-list_example {
     margin: 0;
