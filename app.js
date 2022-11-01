@@ -134,4 +134,6 @@ const fetchDogs = () => {
     });
 };
 
-document.addEventListener("DOMContentLoaded", fetchDogs);
+document.addEventListener("DOMContentLoaded", () => {
+  fetchDogs();
+});
