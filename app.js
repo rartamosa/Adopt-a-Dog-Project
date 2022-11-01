@@ -5,7 +5,6 @@ const hamburgerClose = document.querySelector(".hamburger_close");
 const basket = document.querySelector(".shop");
 const openBasket = document.querySelector(".basket_container");
 const closeBasket = document.querySelector(".shop_close");
-const basketInfo = document.querySelector(".shop_heading-paragraph");
 const sortingButton = document.querySelector(".dogs-container__sorting-button");
 const filterButton = document.querySelector(".dogs-container__filter");
 const filterOptions = document.querySelector(".dogs-container__filter-options");
@@ -109,7 +108,6 @@ const adoptFunction = () => {
   adoptButton.forEach((singleAdopt) => {
     singleAdopt.addEventListener("click", (event) => {
       basketContainer.innerText = Number(basketContainer.innerText) + 1;
-      basketInfo.classList.add("invisible");
       basket.innerHTML += `
       <div class="shop_item" data-id="${event.target.dataset.id}">
           <img
@@ -138,7 +136,6 @@ const adoptFunction = () => {
       deleteButtons.forEach((singleDelete) => {
         singleDelete.addEventListener("click", (event) => {
           basketContainer.innerText = Number(basketContainer.innerText) - 1;
-          console.log(event.target.parentElement.parentElement.parentElement);
           event.target.parentElement.parentElement.parentElement.removeChild(
             event.target.parentElement.parentElement
           );
@@ -147,4 +144,3 @@ const adoptFunction = () => {
     });
   });
 };
-

@@ -189,17 +189,13 @@ body {
   font-size: 15px;
 }
 
-.invisible {
-  color: var(--background-color);
-}
-
 .shop_item {
   display: flex;
   border-radius: 10px;
-  border: 1px solid var(--accent-color);
   background-color: var(--white-color);
   margin-bottom: 25px;
   position: relative;
+  top: -22px;
 }
 
 .shop_img {
@@ -791,7 +787,6 @@ body {
 .dogs-container__dogs-list_example {
   background-color: #fff;
   border-radius: 12px;
-  width: fit-content;
   margin-bottom: 56px;
 }
 
@@ -992,7 +987,7 @@ body {
   .dogs-container__dogs-list_details {
     padding: 0 0 12px 0;
   }
-  
+
   .dogs-container__dogs-list_dot {
     display: inline;
     font-size: 18px;
