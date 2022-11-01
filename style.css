@@ -793,6 +793,7 @@ body {
   padding: 9.5px 16.5px;
   font-size: 12px;
   font-weight: 700;
+  cursor: pointer;
 }
 
 .dogs-container__dogs-list_img {
