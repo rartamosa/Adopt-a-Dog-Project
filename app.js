@@ -5,6 +5,7 @@ const hamburgerClose = document.querySelector(".hamburger_close");
 const basket = document.querySelector(".shop");
 const openBasket = document.querySelector(".basket_container");
 const closeBasket = document.querySelector(".shop_close");
+const basketInfo = document.querySelector(".shop_heading-paragraph");
 const sortingButton = document.querySelector(".dogs-container__sorting-button");
 const filterButton = document.querySelector(".dogs-container__filter");
 const filterOptions = document.querySelector(".dogs-container__filter-options");
@@ -37,8 +38,8 @@ hamburgerClose.addEventListener("click", () => {
 });
 
 openBasket.addEventListener("click", () => {
-  body.classList.add("position");
-  basket.classList.add("visible");
+  body.classList.toggle("position");
+  basket.classList.toggle("visible");
 });
 
 closeBasket.addEventListener("click", () => {
@@ -107,6 +108,8 @@ const adoptFunction = () => {
   );
   adoptButton.forEach((singleAdopt) => {
     singleAdopt.addEventListener("click", (event) => {
+      basketContainer.innerText = Number(basketContainer.innerText) + 1;
+      basketInfo.classList.add("invisible");
       basket.innerHTML += `
       <div class="shop_item" data-id="${event.target.dataset.id}">
           <img
@@ -125,16 +128,16 @@ const adoptFunction = () => {
             <i class="gg-trash"></i>
           </button>
         </div>
-        
 `;
-const closeBasketRerender = document.querySelector(".shop_close");
-closeBasketRerender.addEventListener("click", () => {
-  basket.classList.remove("visible");
-  body.classList.remove("position");
-});
+      const closeBasketRerender = document.querySelector(".shop_close");
+      closeBasketRerender.addEventListener("click", () => {
+        basket.classList.remove("visible");
+        body.classList.remove("position");
+      });
       const deleteButtons = document.querySelectorAll(".delete");
       deleteButtons.forEach((singleDelete) => {
         singleDelete.addEventListener("click", (event) => {
+          basketContainer.innerText = Number(basketContainer.innerText) - 1;
           console.log(event.target.parentElement.parentElement.parentElement);
           event.target.parentElement.parentElement.parentElement.removeChild(
             event.target.parentElement.parentElement
@@ -145,4 +148,3 @@ closeBasketRerender.addEventListener("click", () => {
   });
 };
 
-// basketContainer.innerText = arrayOfDogsInCart.(length - 1);
