@@ -44,6 +44,7 @@ openBasket.addEventListener("click", () => {
 closeBasket.addEventListener("click", () => {
   basket.classList.remove("visible");
   body.classList.remove("position");
+  console.log(closeBasket);
 });
 
 filterClose.addEventListener("click", () => {
@@ -51,15 +52,13 @@ filterClose.addEventListener("click", () => {
   body.classList.remove("position");
 });
 
-let arrayOfDogs = [];
-
 const fetchDogs = () => {
   fetch(`${URL}/dogs`)
     .then((res) => res.json())
     .then((data) => {
       arrayOfDogs = data.records;
       dogsList.innerHTML = "";
-      data.records.forEeach((dog) => {
+      data.records.forEach((dog) => {
         dogsList.innerHTML += `
         <div class="dogs-container__dogs-list_example">
         <img
@@ -79,49 +78,71 @@ const fetchDogs = () => {
               <p class="dogs-container__dogs-list_dot">.</p>
               <span class="dogs-container__dogs-list_2ndline">
                 <p class="dogs-container__dogs-list_feature">Size:</p>
-                <p class="dogs-container__dogs-list_desc">${dog.size}</p>
+                <p class="dogs-container__dogs-list_desc">${dog.size.substring(
+                  1
+                )}</p>
               </span>
             </div>
-            <button class="dogs-container__dogs-list_button" data-id="${dog._id}">Adopt</button>
+            <button class="dogs-container__dogs-list_button" data-id="${
+              dog._id
+            }" data-name="${dog.name}" data-gender="${
+          dog.gender
+        }" data-size="${dog.size.substring(1)}" data-image="${
+          dog.image
+        }">Adopt</button>
           </div>
         </div>
       </div>
         `;
       });
-      const adoptButton = document.querySelector(".dogs-container__dogs-list_button");
-      adoptButton.forEeach((singleAdopt) => {
-        singleAdopt.addEventListener("click", (event) => {
-          basket.innerHTML += `
-          <div class="shop_item" data-id="${event.target.dataset.id}">
-              <img
-                class="shop_img"
-                data-id="${event.target.dataset.id}"
-                title="${event.target.dataset.name}"
-                alt="${event.target.dataset.name}"
-                src="${event.target.dataset.image}"
-              />
-              <span class="shop_img__desc">
-                <h4 class="shop_img_name">${event.target.dataset.name}</h4>
-                <h5 class="shop_img_gender">${event.target.dataset.gender}</h5>
-                <h6 class="shop_img_size">${event.target.dataset.size}</h6>
-              </span>
-              <button class="delete" data-id="${event.target.dataset.id}">
-                <i class="gg-trash"></i>
-              </button>
-            </div>
-    `;
-        });
-        const deleteButton = document.querySelector(".delete");
-        deleteButton.forEeach((singleDelete) => {
-          singleDelete.addEventListener("click", (event) => {
-            const itemInBasket = document.querySelector(".shop_item");
-            itemInBasket.innerHTML = "";
-          })
-        })
-      });
+      adoptFunction();
     });
 };
 
 fetchDogs();
 
-// basketContainer.innerText = arrayOfDogsInCart.length;
+const adoptFunction = () => {
+  const adoptButton = document.querySelectorAll(
+    ".dogs-container__dogs-list_button"
+  );
+  adoptButton.forEach((singleAdopt) => {
+    singleAdopt.addEventListener("click", (event) => {
+      basket.innerHTML += `
+      <div class="shop_item" data-id="${event.target.dataset.id}">
+          <img
+            class="shop_img"
+            data-id="${event.target.dataset.id}"
+            title="${event.target.dataset.name}"
+            alt="${event.target.dataset.name}"
+            src="${event.target.dataset.image}"
+          />
+          <span class="shop_img__desc">
+            <h4 class="shop_img_name">${event.target.dataset.name}</h4>
+            <h5 class="shop_img_gender">${event.target.dataset.gender}</h5>
+            <h6 class="shop_img_size">${event.target.dataset.size}</h6>
+          </span>
+          <button class="delete" data-id="${event.target.dataset.id}">
+            <i class="gg-trash"></i>
+          </button>
+        </div>
+        
+`;
+const closeBasketRerender = document.querySelector(".shop_close");
+closeBasketRerender.addEventListener("click", () => {
+  basket.classList.remove("visible");
+  body.classList.remove("position");
+});
+      const deleteButtons = document.querySelectorAll(".delete");
+      deleteButtons.forEach((singleDelete) => {
+        singleDelete.addEventListener("click", (event) => {
+          console.log(event.target.parentElement.parentElement.parentElement);
+          event.target.parentElement.parentElement.parentElement.removeChild(
+            event.target.parentElement.parentElement
+          );
+        });
+      });
+    });
+  });
+};
+
+// basketContainer.innerText = arrayOfDogsInCart.(length - 1);
