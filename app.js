@@ -101,7 +101,7 @@ const fetchDogs = () => {
           data-direction="left"
           onclick="onPaginationClick(pageNumber - 1, ${Math.ceil(
             data.totalCount / 12
-          )})"
+          )})" onclick="scrollTo${(0, 890)}"
         ></button>
       `;
       for (let i = 1; i <= Math.ceil(data.totalCount / 12); i++) {
