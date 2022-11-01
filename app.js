@@ -55,7 +55,6 @@ filterClose.addEventListener("click", () => {
 });
 
 const onPaginationClick = (newPage) => {
-  console.log(newPage);
   if (newPage !== 0 && newPage <= 3) {
     pageNumber = newPage;
     fetchDogs();
@@ -105,7 +104,9 @@ const fetchDogs = () => {
       `;
       for (let i = 1; i <= Math.ceil(data.totalCount / 12); i++) {
         paginationNavigation.innerHTML += `
-        <button class="dogs-container__pagination_page pagination_${i}" onclick="onPaginationClick(${i})">${i}</button>
+        <button class="dogs-container__pagination_page pagination_${i} ${
+          i === pageNumber && "dogs-container__pagination_active"
+        }" onclick="onPaginationClick(${i})">${i}</button>
         `;
       }
       paginationNavigation.innerHTML += `

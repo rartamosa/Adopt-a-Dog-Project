@@ -740,7 +740,8 @@ body {
 }
 
 .dogs-container__pagination_page:hover,
-.dogs-container__pagination_page:active {
+.dogs-container__pagination_page:active,
+.dogs-container__pagination_active {
   background-color: var(--accent-color);
   color: #fff;
   border-radius: 8px;
