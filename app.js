@@ -54,8 +54,8 @@ filterClose.addEventListener("click", () => {
   body.classList.remove("position");
 });
 
-const onPaginationClick = (newPage) => {
-  if (newPage !== 0 && newPage <= 3) {
+const onPaginationClick = (newPage, maxPage) => {
+  if (newPage !== 0 && newPage <= maxPage) {
     pageNumber = newPage;
     fetchDogs();
   }
@@ -99,21 +99,27 @@ const fetchDogs = () => {
         <button
           class="dogs-container__pagination_left dogs-container__pagination_navigation"
           data-direction="left"
-          onclick="onPaginationClick(pageNumber - 1)"
+          onclick="onPaginationClick(pageNumber - 1, ${Math.ceil(
+            data.totalCount / 12
+          )})"
         ></button>
       `;
       for (let i = 1; i <= Math.ceil(data.totalCount / 12); i++) {
         paginationNavigation.innerHTML += `
         <button class="dogs-container__pagination_page pagination_${i} ${
           i === pageNumber && "dogs-container__pagination_active"
-        }" onclick="onPaginationClick(${i})">${i}</button>
+        }" onclick="onPaginationClick(${i}, ${Math.ceil(
+          data.totalCount / 12
+        )})">${i}</button>
         `;
       }
       paginationNavigation.innerHTML += `
         <button
           class="dogs-container__pagination_right dogs-container__pagination_navigation"
           data-direction="right"
-          onclick="onPaginationClick(pageNumber + 1)"
+          onclick="onPaginationClick(pageNumber + 1, ${Math.ceil(
+            data.totalCount / 12
+          )})"
         ></button>
       `;
     })
