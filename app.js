@@ -44,7 +44,6 @@ openBasket.addEventListener("click", () => {
 closeBasket.addEventListener("click", () => {
   basket.classList.remove("visible");
   body.classList.remove("position");
-  console.log(closeBasket);
 });
 
 filterClose.addEventListener("click", () => {
