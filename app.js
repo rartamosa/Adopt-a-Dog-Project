@@ -87,6 +87,7 @@ const fetchDogs = (callback) => {
           <div class="dogs-container__dogs-list_details">
             <h3 class="dogs-container__dogs-list_name">${item.name}</h3>
             <div class="dogs-container__dogs-list_gender-size">
+              <div class="dogs-container_dogs-list_info">
               <span class="dogs-container__dogs-list_1stline">
                 <p class="dogs-container__dogs-list_feature">Gender:</p>
                 <p class="dogs-container__dogs-list_desc">${item.gender}</p>
@@ -98,6 +99,7 @@ const fetchDogs = (callback) => {
                   1
                 )}</p>
               </span>
+              </div>
               <button class="dogs-container__dogs-list_button" data-id="${
                 item._id
               }" data-name="${item.name}" data-gender="${

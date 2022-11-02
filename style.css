@@ -811,7 +811,7 @@ body {
   color: var(--white-color);
   border-radius: 57px;
   border: none;
-  padding: 9.5px 16.5px;
+  padding: 7.5px 11.5px;
   font-size: 12px;
   font-weight: 700;
   cursor: pointer;
@@ -993,8 +993,12 @@ body {
     padding: 8px;
   }
 
-  .dogs-container__dogs-list_info {
+  .dogs-container_dogs-list_info {
     display: flex;
+  }
+
+  .dogs-container__dogs-list_button {
+    padding: 9.5px 16.5px;
   }
 
   .dogs-container__dogs-list_details {
