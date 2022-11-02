@@ -173,27 +173,38 @@ body {
   display: inline;
 }
 
+.hidden {
+  display: none;
+}
+
 .shop_heading {
   color: var(--main-blue-color);
   text-transform: uppercase;
   margin: 0;
   margin-top: 47px;
-  margin-bottom: 60px;
+  margin-bottom: 35px;
   text-align: center;
   font-size: 26px;
+}
+
+.shop_heading-paragraph {
+  color: var(--main-blue-color);
+  text-align: center;
+  font-size: 15px;
 }
 
 .shop_item {
   display: flex;
   border-radius: 10px;
-  border: 1px solid var(--accent-color);
   background-color: var(--white-color);
   margin-bottom: 25px;
   position: relative;
+  top: -22px;
 }
 
 .shop_img {
   width: 35%;
+  border-radius: 10px;
 }
 
 .shop_img__desc {
@@ -208,6 +219,7 @@ body {
   font-size: 22px;
   line-height: 24px;
   color: var(--main-blue-color);
+  text-transform: capitalize;
 }
 
 .shop_img_gender {
@@ -216,6 +228,7 @@ body {
   line-height: 24px;
   color: var(--accent-color);
   margin-top: 8px;
+  text-transform: capitalize;
 }
 
 .shop_img_size {
@@ -223,6 +236,7 @@ body {
   font-size: 16px;
   line-height: 24px;
   color: var(--accent-color);
+  text-transform: capitalize;
 }
 
 .delete {
@@ -230,7 +244,8 @@ body {
   background-color: var(--white-color);
   position: absolute;
   top: 15px;
-  right: 6px;
+  right: 15px;
+  cursor: pointer;
 }
 
 .gg-trash {
@@ -537,13 +552,11 @@ body {
 
   .shop_heading {
     margin-top: 33px;
-    margin-bottom: 43px;
+    margin-bottom: 25px;
   }
 
   .shop_close {
-    top: 20px;
-    right: 20px;
-    width: 20px;
+    display: none;
   }
 
   .basket_quantity {
@@ -557,7 +570,7 @@ body {
   display: grid;
   grid-template-columns: 1fr 1fr;
   position: sticky;
-  top: 0;
+  top: 128px;
   background-color: var(--background-color);
 }
 
@@ -770,7 +783,7 @@ body {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 28px;
-  scroll-margin-top: 115px;
+  scroll-margin-top: 244px;
 }
 
 .error-message {
@@ -786,13 +799,31 @@ body {
   margin-bottom: 56px;
 }
 
+.dogs-container__dogs-list_gender-size {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.dogs-container__dogs-list_button {
+  background-color: var(--accent-color);
+  color: var(--white-color);
+  border-radius: 57px;
+  border: none;
+  padding: 9.5px 16.5px;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
 .dogs-container__dogs-list_img {
   width: 100%;
   border-radius: 10px;
 }
 
 .dogs-container__dogs-list_name {
-  margin: 0 0 4px 0;
+  margin: 0;
   color: var(--accent-color);
   font-size: 16px;
   line-height: 24px;
@@ -894,7 +925,7 @@ body {
     display: block;
     margin: 0;
     position: sticky;
-    top: 0;
+    top: 104px;
     height: -moz-fit-content;
     height: fit-content;
     margin-bottom: 85px;
@@ -955,18 +986,21 @@ body {
     column-gap: 20px;
     row-gap: 50px;
     grid-auto-rows: max-content;
-    scroll-margin-top: 0;
+    scroll-margin-top: 104px;
   }
   .dogs-container__dogs-list_example {
     margin: 0;
     padding: 8px;
   }
+
+  .dogs-container__dogs-list_info {
+    display: flex;
+  }
+
   .dogs-container__dogs-list_details {
     padding: 0 0 12px 0;
   }
-  .dogs-container__dogs-list_gender-size {
-    display: flex;
-  }
+
   .dogs-container__dogs-list_dot {
     display: inline;
     font-size: 18px;

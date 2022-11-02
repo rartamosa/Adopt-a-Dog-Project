@@ -16,6 +16,8 @@ const paginationNavigation = document.querySelector(
   ".dogs-container__pagination"
 );
 let pageNumber = 1;
+const basketContainer = document.querySelector(".basket_quantity");
+const header = document.querySelector(".header");
 
 sortingButton.addEventListener("click", () => {
   const sortingOptions = document.querySelector(
@@ -27,6 +29,7 @@ sortingButton.addEventListener("click", () => {
 filterButton.addEventListener("click", () => {
   filterOptions.classList.add("filtering_open");
   body.classList.add("position");
+  header.classList.add("hidden");
 });
 
 hamburgerOpen.addEventListener("click", () => {
@@ -40,8 +43,8 @@ hamburgerClose.addEventListener("click", () => {
 });
 
 openBasket.addEventListener("click", () => {
-  body.classList.add("position");
-  basket.classList.add("visible");
+  body.classList.toggle("position");
+  basket.classList.toggle("visible");
 });
 
 closeBasket.addEventListener("click", () => {
@@ -52,6 +55,7 @@ closeBasket.addEventListener("click", () => {
 filterClose.addEventListener("click", () => {
   filterOptions.classList.remove("filtering_open");
   body.classList.remove("position");
+  header.classList.remove("hidden");
 });
 
 const onPaginationClick = (newPage, maxPage) => {
@@ -94,6 +98,13 @@ const fetchDogs = (callback) => {
                   1
                 )}</p>
               </span>
+              <button class="dogs-container__dogs-list_button" data-id="${
+                item._id
+              }" data-name="${item.name}" data-gender="${
+          item.gender
+        }" data-size="${item.size.substring(1)}" data-image="${
+          item.image
+        }">Adopt</button>
             </div>
           </div>
         </div>
@@ -135,9 +146,54 @@ const fetchDogs = (callback) => {
     })
     .finally(() => {
       callback();
+      adoptFunction();
     });
 };
 
 document.addEventListener("DOMContentLoaded", () => {
   fetchDogs(() => scrollTo(0, 0));
 });
+
+const adoptFunction = () => {
+  const adoptButton = document.querySelectorAll(
+    ".dogs-container__dogs-list_button"
+  );
+  adoptButton.forEach((singleAdopt) => {
+    singleAdopt.addEventListener("click", (event) => {
+      basketContainer.innerText = Number(basketContainer.innerText) + 1;
+      basket.innerHTML += `
+      <div class="shop_item" data-id="${event.target.dataset.id}">
+          <img
+            class="shop_img"
+            data-id="${event.target.dataset.id}"
+            title="${event.target.dataset.name}"
+            alt="${event.target.dataset.name}"
+            src="${event.target.dataset.image}"
+          />
+          <span class="shop_img__desc">
+            <h4 class="shop_img_name">${event.target.dataset.name}</h4>
+            <h5 class="shop_img_gender">${event.target.dataset.gender}</h5>
+            <h6 class="shop_img_size">${event.target.dataset.size}</h6>
+          </span>
+          <button class="delete" data-id="${event.target.dataset.id}">
+            <i class="gg-trash"></i>
+          </button>
+        </div>
+`;
+      const closeBasketRerender = document.querySelector(".shop_close");
+      closeBasketRerender.addEventListener("click", () => {
+        basket.classList.remove("visible");
+        body.classList.remove("position");
+      });
+      const deleteButtons = document.querySelectorAll(".delete");
+      deleteButtons.forEach((singleDelete) => {
+        singleDelete.addEventListener("click", (event) => {
+          basketContainer.innerText = Number(basketContainer.innerText) - 1;
+          event.target.parentElement.parentElement.parentElement.removeChild(
+            event.target.parentElement.parentElement
+          );
+        });
+      });
+    });
+  });
+};
