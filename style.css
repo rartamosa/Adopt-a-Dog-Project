@@ -770,12 +770,19 @@ body {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 28px;
+  scroll-margin-top: 115px;
+}
+
+.error-message {
+  grid-column: 1 / 4;
+  font-size: 25px;
+  text-align: center;
+  padding: 50px 0;
 }
 
 .dogs-container__dogs-list_example {
   background-color: #fff;
   border-radius: 12px;
-  width: fit-content;
   margin-bottom: 56px;
 }
 
@@ -789,6 +796,7 @@ body {
   color: var(--accent-color);
   font-size: 16px;
   line-height: 24px;
+  text-transform: capitalize;
 }
 
 .dogs-container__dogs-list_details {
@@ -815,6 +823,7 @@ body {
 
 .dogs-container__dogs-list_desc {
   font-weight: 700;
+  text-transform: capitalize;
 }
 
 .dogs-container__pagination {
@@ -856,7 +865,8 @@ body {
 }
 
 .dogs-container__pagination_page:hover,
-.dogs-container__pagination_page:active {
+.dogs-container__pagination_page:active,
+.dogs-container__pagination_active {
   background-color: var(--accent-color);
   color: #fff;
   border-radius: 8px;
@@ -893,10 +903,9 @@ body {
     padding: 0;
     margin-bottom: 15px;
     pointer-events: none;
-  }
-  .dogs-container__filter {
     font-size: 24px;
     line-height: 36px;
+    width: unset;
   }
   .dogs-container__filter-button {
     display: none;
@@ -946,6 +955,7 @@ body {
     column-gap: 20px;
     row-gap: 50px;
     grid-auto-rows: max-content;
+    scroll-margin-top: 0;
   }
   .dogs-container__dogs-list_example {
     margin: 0;
