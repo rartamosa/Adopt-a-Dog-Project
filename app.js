@@ -57,15 +57,16 @@ filterClose.addEventListener("click", () => {
 const onPaginationClick = (newPage, maxPage) => {
   if (newPage !== 0 && newPage <= maxPage) {
     pageNumber = newPage;
-    fetchDogs();
-    dogsContainer.scrollIntoView({
-      behavior: "smooth",
-      block: "start",
+    fetchDogs(() => {
+      dogsContainer.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
     });
   }
 };
 
-const fetchDogs = () => {
+const fetchDogs = (callback) => {
   fetch(`${URL}/dogs?page=${pageNumber}`)
     .then((res) => res.json())
     .then((data) => {
@@ -131,9 +132,12 @@ const fetchDogs = () => {
       dogsContainer.innerHTML = `
       <p class="error-message">Ooops, something went wrong :( Please, try re-loading the page.</p>
       `;
+    })
+    .finally(() => {
+      callback();
     });
 };
 
 document.addEventListener("DOMContentLoaded", () => {
-  fetchDogs();
+  fetchDogs(() => scrollTo(0, 0));
 });
