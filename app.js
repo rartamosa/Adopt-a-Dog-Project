@@ -10,6 +10,17 @@ const sortingButton = document.querySelector(".dogs-container__sorting-button");
 const filterButton = document.querySelector(".dogs-container__filter");
 const filterOptions = document.querySelector(".dogs-container__filter-options");
 const filterClose = document.querySelector(".filter-close");
+const sortingButtonContainer = document.querySelector(
+  ".dogs-container__sorting"
+);
+const sortByNameButton = document.querySelector(
+  ".dogs-container__sorting-name"
+);
+const sortBySizeButton = document.querySelector(
+  ".dogs-container__sorting-size"
+);
+const totalCount = document.querySelector(".dogs-container__dogs-count");
+
 const URL = "https://dogs-api-group-project-1.herokuapp.com";
 const dogsContainer = document.querySelector(".dogs-container__dogs-list");
 const paginationNavigation = document.querySelector(
@@ -74,6 +85,7 @@ const fetchDogs = (callback) => {
   fetch(`${URL}/dogs?page=${pageNumber}`)
     .then((res) => res.json())
     .then((data) => {
+      arrayOfDogs = data.records;
       dogsContainer.innerHTML = "";
       data.records.forEach((item) => {
         dogsContainer.innerHTML += `
@@ -147,6 +159,8 @@ const fetchDogs = (callback) => {
     .finally(() => {
       callback();
       adoptFunction();
+      sortByNameFunction();
+      sortBySizeFunction();
     });
 };
 
@@ -194,6 +208,86 @@ const adoptFunction = () => {
           );
         });
       });
+    });
+  });
+};
+
+const sortByNameFunction = () => {
+  sortByNameButton.addEventListener("click", (event) => {
+    event.preventDefault();
+    arrayOfDogs.sort(function (a, b) {
+      if (a.name.toLowerCase() < b.name.toLowerCase()) return -1;
+      if (a.name.toLowerCase() > b.name.toLowerCase()) return 1;
+      return 0;
+    });
+    fetchDogs(() => {
+      dogsContainer.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    });
+    const sortingOptions = document.querySelector(
+      ".dogs-container__sorting-options"
+    );
+    sortingOptions.classList.remove("sorting_open");
+    sortingButtonContainer.innerHTML = `
+    <button class="dogs-container__sorting-button" type="button">
+            Sort by: Name
+            <img
+              src="./assets/dropdown_icon.png"
+              alt="dropdown"
+              title="dropdown"
+              class="dogs-container__sorting-button_icon"
+            />
+          </button>
+    `;
+    const sortingButtonRerender = document.querySelector(
+      ".dogs-container__sorting-button"
+    );
+    sortingButtonRerender.addEventListener("click", () => {
+      const sortingOptions = document.querySelector(
+        ".dogs-container__sorting-options"
+      );
+      sortingOptions.classList.toggle("sorting_open");
+    });
+  });
+};
+
+const sortBySizeFunction = () => {
+  sortBySizeButton.addEventListener("click", (event) => {
+    event.preventDefault();
+    arrayOfDogs.sort(function (a, b) {
+      return a.size.charAt(0) - b.size.charAt(0);
+    });
+    fetchDogs(() => {
+      dogsContainer.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    });
+    const sortingOptions = document.querySelector(
+      ".dogs-container__sorting-options"
+    );
+    sortingOptions.classList.remove("sorting_open");
+    sortingButtonContainer.innerHTML = `
+    <button class="dogs-container__sorting-button" type="button">
+            Sort by: Size
+            <img
+              src="./assets/dropdown_icon.png"
+              alt="dropdown"
+              title="dropdown"
+              class="dogs-container__sorting-button_icon"
+            />
+          </button>
+    `;
+    const sortingButtonRerender = document.querySelector(
+      ".dogs-container__sorting-button"
+    );
+    sortingButtonRerender.addEventListener("click", () => {
+      const sortingOptions = document.querySelector(
+        ".dogs-container__sorting-options"
+      );
+      sortingOptions.classList.toggle("sorting_open");
     });
   });
 };
