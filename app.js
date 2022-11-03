@@ -74,6 +74,7 @@ const fetchDogs = (callback) => {
   fetch(`${URL}/dogs?page=${pageNumber}`)
     .then((res) => res.json())
     .then((data) => {
+      arrayOfDogs = data.records;
       dogsContainer.innerHTML = "";
       data.records.forEach((item) => {
         dogsContainer.innerHTML += `
@@ -162,25 +163,24 @@ const adoptFunction = () => {
     singleAdopt.addEventListener("click", (event) => {
       basketContainer.innerText = Number(basketContainer.innerText) + 1;
       basket.innerHTML += `
-        <div class="shop_item" data-id="${event.target.dataset.id}">
-            <img
-              class="shop_img"
-              data-id="${event.target.dataset.id}"
-              title="${event.target.dataset.name}"
-              alt="${event.target.dataset.name}"
-              src="${event.target.dataset.image}"
-            />
-            <span class="shop_img__desc">
-              <h4 class="shop_img_name">${event.target.dataset.name}</h4>
-              <h5 class="shop_img_gender">${event.target.dataset.gender}</h5>
-              <h6 class="shop_img_size">${event.target.dataset.size}</h6>
-            </span>
-            <button class="delete" data-id="${event.target.dataset.id}">
-              <i class="gg-trash"></i>
-            </button>
-          </div>
-  `;
-
+      <div class="shop_item" data-id="${event.target.dataset.id}">
+          <img
+            class="shop_img"
+            data-id="${event.target.dataset.id}"
+            title="${event.target.dataset.name}"
+            alt="${event.target.dataset.name}"
+            src="${event.target.dataset.image}"
+          />
+          <span class="shop_img__desc">
+            <h4 class="shop_img_name">${event.target.dataset.name}</h4>
+            <h5 class="shop_img_gender">${event.target.dataset.gender}</h5>
+            <h6 class="shop_img_size">${event.target.dataset.size}</h6>
+          </span>
+          <button class="delete" data-id="${event.target.dataset.id}">
+            <i class="gg-trash"></i>
+          </button>
+        </div>
+`;
       const closeBasketRerender = document.querySelector(".shop_close");
       closeBasketRerender.addEventListener("click", () => {
         basket.classList.remove("visible");
