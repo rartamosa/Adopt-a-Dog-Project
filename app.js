@@ -19,7 +19,6 @@ const sortByNameButton = document.querySelector(
 const sortBySizeButton = document.querySelector(
   ".dogs-container__sorting-size"
 );
-const totalCount = document.querySelector(".dogs-container__dogs-count");
 
 const URL = "https://dogs-api-group-project-1.herokuapp.com";
 const dogsContainer = document.querySelector(".dogs-container__dogs-list");
