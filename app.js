@@ -18,6 +18,21 @@ const paginationNavigation = document.querySelector(
 let pageNumber = 1;
 const basketContainer = document.querySelector(".basket_quantity");
 const header = document.querySelector(".header");
+const maleInput = document.querySelector("#male");
+let maleInputValue = false;
+const femaleInput = document.querySelector("#female");
+let femaleInputValue = false;
+const smallInput = document.querySelector("#small");
+let smallInputValue = false;
+const mediumInput = document.querySelector("#medium");
+let mediumInputValue = false;
+const largeInput = document.querySelector("#large");
+let largeInputValue = false;
+const nameInput = document.querySelector(
+  ".dogs-container__filter-options_name"
+);
+let nameInputValue = "";
+const totalCount = document.querySelector(".dogs-container__dogs-count");
 
 sortingButton.addEventListener("click", () => {
   const sortingOptions = document.querySelector(
@@ -71,7 +86,26 @@ const onPaginationClick = (newPage, maxPage) => {
 };
 
 const fetchDogs = (callback) => {
-  fetch(`${URL}/dogs?page=${pageNumber}`)
+  let requestURL = `${URL}/dogs?page=${pageNumber}`;
+  if (maleInputValue) {
+    requestURL += `&gender=${maleInput.value}`;
+  }
+  if (femaleInputValue) {
+    requestURL += `&gender=${femaleInput.value}`;
+  }
+  if (smallInputValue) {
+    requestURL += `&size=1${smallInput.value}`;
+  }
+  if (mediumInputValue) {
+    requestURL += `&size=2${mediumInput.value}`;
+  }
+  if (largeInputValue) {
+    requestURL += `&size=3${largeInput.value}`;
+  }
+  if (nameInputValue) {
+    requestURL += `&name=${nameInput.value}`;
+  }
+  fetch(requestURL)
     .then((res) => res.json())
     .then((data) => {
       dogsContainer.innerHTML = "";
@@ -138,6 +172,7 @@ const fetchDogs = (callback) => {
           )})"
         ></button>
       `;
+      totalCount.innerText = `${data.totalCount} total`;
     })
     .catch((err) => {
       dogsContainer.innerHTML = `
@@ -197,3 +232,22 @@ const adoptFunction = () => {
     });
   });
 };
+
+filterOptions.addEventListener("submit", (event) => {
+  event.preventDefault();
+  maleInputValue = maleInput.checked;
+  femaleInputValue = femaleInput.checked;
+  smallInputValue = smallInput.checked;
+  mediumInputValue = mediumInput.checked;
+  largeInputValue = largeInput.checked;
+  nameInputValue = nameInput.value;
+  fetchDogs(() => {
+    dogsContainer.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
+  });
+  filterOptions.classList.remove("filtering_open");
+  body.classList.remove("position");
+  header.classList.remove("hidden");
+});
