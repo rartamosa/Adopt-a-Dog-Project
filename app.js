@@ -161,8 +161,12 @@ const adoptFunction = () => {
   );
   adoptButton.forEach((singleAdopt) => {
     singleAdopt.addEventListener("click", (event) => {
-      basketContainer.innerText = Number(basketContainer.innerText) + 1;
-      basket.innerHTML += `
+      const dogToAdd = document.querySelector(
+        `.shop_item[data-id="${event.target.dataset.id}"]`
+      );
+      if (!dogToAdd) {
+        basketContainer.innerText = Number(basketContainer.innerText) + 1;
+        basket.innerHTML += `
       <div class="shop_item" data-id="${event.target.dataset.id}">
           <img
             class="shop_img"
@@ -181,20 +185,21 @@ const adoptFunction = () => {
           </button>
         </div>
 `;
-      const closeBasketRerender = document.querySelector(".shop_close");
-      closeBasketRerender.addEventListener("click", () => {
-        basket.classList.remove("visible");
-        body.classList.remove("position");
-      });
-      const deleteButtons = document.querySelectorAll(".delete");
-      deleteButtons.forEach((singleDelete) => {
-        singleDelete.addEventListener("click", (event) => {
-          basketContainer.innerText = Number(basketContainer.innerText) - 1;
-          event.target.parentElement.parentElement.parentElement.removeChild(
-            event.target.parentElement.parentElement
-          );
+        const closeBasketRerender = document.querySelector(".shop_close");
+        closeBasketRerender.addEventListener("click", () => {
+          basket.classList.remove("visible");
+          body.classList.remove("position");
         });
-      });
+        const deleteButtons = document.querySelectorAll(".delete");
+        deleteButtons.forEach((singleDelete) => {
+          singleDelete.addEventListener("click", (event) => {
+            basketContainer.innerText = Number(basketContainer.innerText) - 1;
+            event.target.parentElement.parentElement.parentElement.removeChild(
+              event.target.parentElement.parentElement
+            );
+          });
+        });
+      }
     });
   });
 };
