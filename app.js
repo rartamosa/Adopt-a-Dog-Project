@@ -235,6 +235,7 @@ const adoptFunction = () => {
 
 filterOptions.addEventListener("submit", (event) => {
   event.preventDefault();
+  pageNumber = 1;
   maleInputValue = maleInput.checked;
   femaleInputValue = femaleInput.checked;
   smallInputValue = smallInput.checked;
