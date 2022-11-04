@@ -10,6 +10,7 @@ const sortingButton = document.querySelector(".dogs-container__sorting-button");
 const filterButton = document.querySelector(".dogs-container__filter");
 const filterOptions = document.querySelector(".dogs-container__filter-options");
 const filterClose = document.querySelector(".filter-close");
+const sort = document.querySelector(".sort_value");
 const sortingButtonContainer = document.querySelector(
   ".dogs-container__sorting"
 );
@@ -26,6 +27,7 @@ const paginationNavigation = document.querySelector(
   ".dogs-container__pagination"
 );
 let pageNumber = 1;
+let sortValue = "name";
 const basketContainer = document.querySelector(".basket_quantity");
 const header = document.querySelector(".header");
 
@@ -81,7 +83,7 @@ const onPaginationClick = (newPage, maxPage) => {
 };
 
 const fetchDogs = (callback) => {
-  fetch(`${URL}/dogs?page=${pageNumber}`)
+  fetch(`${URL}/dogs?page=${pageNumber}&sort=${sortValue}`)
     .then((res) => res.json())
     .then((data) => {
       arrayOfDogs = data.records;
@@ -211,82 +213,32 @@ const adoptFunction = () => {
   });
 };
 
-const sortByNameFunction = () => {
-  sortByNameButton.addEventListener("click", (event) => {
-    event.preventDefault();
-    arrayOfDogs.sort(function (a, b) {
-      if (a.name.toLowerCase() < b.name.toLowerCase()) return -1;
-      if (a.name.toLowerCase() > b.name.toLowerCase()) return 1;
-      return 0;
-    });
-    fetchDogs(() => {
-      dogsContainer.scrollIntoView({
-        behavior: "smooth",
-        block: "start",
-      });
-    });
-    const sortingOptions = document.querySelector(
-      ".dogs-container__sorting-options"
-    );
-    sortingOptions.classList.remove("sorting_open");
-    sortingButtonContainer.innerHTML = `
-    <button class="dogs-container__sorting-button" type="button">
-            Sort by: Name
-            <img
-              src="./assets/dropdown_icon.png"
-              alt="dropdown"
-              title="dropdown"
-              class="dogs-container__sorting-button_icon"
-            />
-          </button>
-    `;
-    const sortingButtonRerender = document.querySelector(
-      ".dogs-container__sorting-button"
-    );
-    sortingButtonRerender.addEventListener("click", () => {
-      const sortingOptions = document.querySelector(
-        ".dogs-container__sorting-options"
-      );
-      sortingOptions.classList.toggle("sorting_open");
+sortByNameButton.addEventListener("click", () => {
+  sortValue = "name";
+  fetchDogs(() => {
+    dogsContainer.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
     });
   });
-};
+  const sortingOptions = document.querySelector(
+    ".dogs-container__sorting-options"
+  );
+  sortingOptions.classList.remove("sorting_open");
+  sort.innerText = "name";
+});
 
-const sortBySizeFunction = () => {
-  sortBySizeButton.addEventListener("click", (event) => {
-    event.preventDefault();
-    arrayOfDogs.sort(function (a, b) {
-      return a.size.charAt(0) - b.size.charAt(0);
-    });
-    fetchDogs(() => {
-      dogsContainer.scrollIntoView({
-        behavior: "smooth",
-        block: "start",
-      });
-    });
-    const sortingOptions = document.querySelector(
-      ".dogs-container__sorting-options"
-    );
-    sortingOptions.classList.remove("sorting_open");
-    sortingButtonContainer.innerHTML = `
-    <button class="dogs-container__sorting-button" type="button">
-            Sort by: Size
-            <img
-              src="./assets/dropdown_icon.png"
-              alt="dropdown"
-              title="dropdown"
-              class="dogs-container__sorting-button_icon"
-            />
-          </button>
-    `;
-    const sortingButtonRerender = document.querySelector(
-      ".dogs-container__sorting-button"
-    );
-    sortingButtonRerender.addEventListener("click", () => {
-      const sortingOptions = document.querySelector(
-        ".dogs-container__sorting-options"
-      );
-      sortingOptions.classList.toggle("sorting_open");
+sortBySizeButton.addEventListener("click", () => {
+  sortValue = "size";
+  fetchDogs(() => {
+    dogsContainer.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
     });
   });
-};
+  const sortingOptions = document.querySelector(
+    ".dogs-container__sorting-options"
+  );
+  sortingOptions.classList.remove("sorting_open");
+  sort.innerText = "size";
+});
