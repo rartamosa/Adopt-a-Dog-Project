@@ -214,6 +214,7 @@ const adoptFunction = () => {
 };
 
 sortByNameButton.addEventListener("click", () => {
+  pageNumber = 1;
   sortValue = "name";
   fetchDogs(() => {
     dogsContainer.scrollIntoView({
@@ -225,10 +226,11 @@ sortByNameButton.addEventListener("click", () => {
     ".dogs-container__sorting-options"
   );
   sortingOptions.classList.remove("sorting_open");
-  sort.innerText = "name";
+  sort.innerText = "Name";
 });
 
 sortBySizeButton.addEventListener("click", () => {
+  pageNumber = 1;
   sortValue = "size";
   fetchDogs(() => {
     dogsContainer.scrollIntoView({
@@ -240,5 +242,5 @@ sortBySizeButton.addEventListener("click", () => {
     ".dogs-container__sorting-options"
   );
   sortingOptions.classList.remove("sorting_open");
-  sort.innerText = "size";
+  sort.innerText = "Size";
 });
