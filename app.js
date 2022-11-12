@@ -11,11 +11,25 @@ const filterButton = document.querySelector(".dogs-container__filter");
 const filterOptions = document.querySelector(".dogs-container__filter-options");
 const filterClose = document.querySelector(".filter-close");
 const URL = "https://dogs-api-awdk.onrender.com";
+const sort = document.querySelector(".sort_value");
+const sortingButtonContainer = document.querySelector(
+  ".dogs-container__sorting"
+);
+const sortByNameButton = document.querySelector(
+  ".dogs-container__sorting-name"
+);
+const sortBySizeButton = document.querySelector(
+  ".dogs-container__sorting-size"
+);
 const dogsContainer = document.querySelector(".dogs-container__dogs-list");
 const paginationNavigation = document.querySelector(
   ".dogs-container__pagination"
 );
+const sortingOptions = document.querySelector(
+  ".dogs-container__sorting-options"
+);
 let pageNumber = 1;
+let sortValue = "name";
 const basketContainer = document.querySelector(".basket_quantity");
 const header = document.querySelector(".header");
 const maleInput = document.querySelector("#male");
@@ -86,7 +100,7 @@ const onPaginationClick = (newPage, maxPage) => {
 };
 
 const fetchDogs = (callback) => {
-  let requestURL = `${URL}/dogs?page=${pageNumber}`;
+  let requestURL = `${URL}/dogs?page=${pageNumber}&sort=${sortValue}`;
   if (maleInputValue) {
     requestURL += `&gender=${maleInput.value}`;
   }
@@ -259,4 +273,30 @@ filterOptions.addEventListener("submit", (event) => {
   filterOptions.classList.remove("filtering_open");
   body.classList.remove("position");
   header.classList.remove("hidden");
+});
+
+sortByNameButton.addEventListener("click", () => {
+  pageNumber = 1;
+  sortValue = "name";
+  fetchDogs(() => {
+    dogsContainer.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
+  });
+  sortingOptions.classList.remove("sorting_open");
+  sort.innerText = "Name";
+});
+
+sortBySizeButton.addEventListener("click", () => {
+  pageNumber = 1;
+  sortValue = "size";
+  fetchDogs(() => {
+    dogsContainer.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
+  });
+  sortingOptions.classList.remove("sorting_open");
+  sort.innerText = "Size";
 });
