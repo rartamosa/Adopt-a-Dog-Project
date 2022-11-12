@@ -1,3 +1,14 @@
+# List of technologies used in this project:
+
+- HTML
+- CSS
+- CSS variables
+- fetch()
+- vanilla JavaScript
+- Rest API
+
+<hr>
+
 # Documentation
 
 ## 1. API
