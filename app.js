@@ -10,7 +10,7 @@ const sortingButton = document.querySelector(".dogs-container__sorting-button");
 const filterButton = document.querySelector(".dogs-container__filter");
 const filterOptions = document.querySelector(".dogs-container__filter-options");
 const filterClose = document.querySelector(".filter-close");
-const URL = "https://dogs-api-group-project-1.herokuapp.com";
+const URL = "https://dogs-api-awdk.onrender.com";
 const dogsContainer = document.querySelector(".dogs-container__dogs-list");
 const paginationNavigation = document.querySelector(
   ".dogs-container__pagination"
