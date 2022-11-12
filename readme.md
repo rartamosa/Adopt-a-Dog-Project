@@ -2,7 +2,7 @@
 
 ## 1. API
 
-**Base url**: https://dogs-api-group-project-1.herokuapp.com
+**Base url**: https://dogs-api-awdk.onrender.com
 
 **GET** /dogs
 
