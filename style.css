@@ -465,15 +465,7 @@ body {
   display: none;
 }
 
-.position {
-  position: fixed;
-}
-
 @media all and (min-width: 1180px) {
-  .position {
-    position: static;
-  }
-
   .container {
     margin: 0 auto;
     width: 1180px;
