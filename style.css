@@ -628,6 +628,11 @@ body {
   font-size: 14px;
   line-height: 20px;
   cursor: pointer;
+  margin-bottom: 15px;
+}
+
+.dogs-container__filter-options_checkbox:last-of-type {
+  margin-bottom: 0;
 }
 
 .checkbox {
@@ -788,7 +793,6 @@ body {
 .dogs-container__dogs-list_example {
   background-color: #fff;
   border-radius: 12px;
-  margin-bottom: 56px;
 }
 
 .dogs-container__dogs-list_gender-size {
@@ -812,6 +816,8 @@ body {
 .dogs-container__dogs-list_img {
   width: 100%;
   border-radius: 10px;
+  height: 264px;
+  object-fit: cover;
 }
 
 .dogs-container__dogs-list_name {
@@ -855,7 +861,7 @@ body {
   justify-content: center;
   gap: 12px;
   width: 100%;
-  margin-bottom: 74px;
+  margin: 56px 0 56px 0;
 }
 
 .dogs-container__pagination_left {
