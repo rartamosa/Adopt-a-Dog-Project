@@ -816,7 +816,7 @@ body {
 .dogs-container__dogs-list_img {
   width: 100%;
   border-radius: 10px;
-  height: 264px;
+  height: 160px;
   object-fit: cover;
 }
 
@@ -989,6 +989,10 @@ body {
   .dogs-container__dogs-list_example {
     margin: 0;
     padding: 8px;
+  }
+
+  .dogs-container__dogs-list_img {
+    height: 264px;
   }
 
   .dogs-container_dogs-list_info {
