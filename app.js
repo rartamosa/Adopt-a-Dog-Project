@@ -10,7 +10,7 @@ const sortingButton = document.querySelector(".dogs-container__sorting-button");
 const filterButton = document.querySelector(".dogs-container__filter");
 const filterOptions = document.querySelector(".dogs-container__filter-options");
 const filterClose = document.querySelector(".filter-close");
-const URL = "https://dogs-api-awdk.onrender.com";
+const URL = "https://dogs-api.fly.dev";
 const sort = document.querySelector(".sort_value");
 const sortingButtonContainer = document.querySelector(
   ".dogs-container__sorting"
